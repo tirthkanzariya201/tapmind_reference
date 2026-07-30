@@ -1,0 +1,17 @@
+{
+  "name": "tapmind-reference",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TapMind Reference — Glossary and Changelog (Jamdesk)",
+  "scripts": {
+    "dev": "jamdesk dev --port 3457",
+    "validate": "jamdesk validate",
+    "deploy": "jamdesk deploy"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "jamdesk": "latest"
+  }
+}

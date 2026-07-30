@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Jamdesk
+.jamdesk/
+.jamdeskrc
+.jamdeskrc.*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs / debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Build / cache
+dist/
+build/
+.cache/
+*.tsbuildinfo
