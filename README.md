@@ -1,4 +1,4 @@
-# TapMind Reference
+# TapMind Resources
 
 Minimal [Jamdesk](https://jamdesk.com) documentation site for TapMind SDK Integration:
 
@@ -17,14 +17,10 @@ Minimal [Jamdesk](https://jamdesk.com) documentation site for TapMind SDK Integr
 
 ## Set your Jamdesk `projectId`
 
-1. Open the Jamdesk dashboard → your **TapMind Reference** (or equivalent) project.
+1. Open the Jamdesk dashboard → your **TapMind Resources** (or equivalent) project.
 2. Go to **Project settings** (or the project overview that shows the project ID).
 3. Copy the **Project ID**.
-4. Paste it into [`docs.json`](./docs.json), replacing:
-
-   ```json
-   "projectId": "REPLACE_WITH_JAMDESK_PROJECT_ID"
-   ```
+4. Paste it into [`docs.json`](./docs.json) as `"projectId"`.
 
    Do not invent an ID. Do not commit API tokens.
 
@@ -82,7 +78,7 @@ Or: `npm run deploy` after `npm install` and login.
 ├── docs.json                 # Jamdesk site config
 ├── glossary.mdx              # → /glossary
 ├── changelog.mdx             # → /changelog
-├── images/                   # Optional logo/favicon later
+├── images/                   # Logo + favicon
 ├── package.json
 ├── .gitignore
 └── .github/workflows/validate.yml
@@ -90,4 +86,7 @@ Or: `npm run deploy` after `npm install` and login.
 
 ## Branding
 
-Text branding uses the `name` in `docs.json` (`TapMind Reference`). Primary accent is `#FE7B49`. Add logo/favicon under `images/` when ready (see [`images/README.md`](./images/README.md)).
+- Site name: `TapMind Resources` in `docs.json`
+- Logo: `/images/logo-light.png`
+- Favicon: `/images/favicon.png`
+- Primary accent: `#FE7B49`

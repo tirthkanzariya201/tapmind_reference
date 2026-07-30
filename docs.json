@@ -1,19 +1,23 @@
 {
   "$schema": "https://jamdesk.com/docs.json",
   "projectId": "a7pYkYzx1U0EkFGx7BoW",
-  "name": "TapMind Reference",
+  "name": "TapMind Resources",
   "description": "Glossary and changelog for TapMind SDK Integration",
   "theme": "jam",
   "colors": {
     "primary": "#FE7B49"
   },
+  "logo": {
+    "light": "/images/logo-light.png"
+  },
+  "favicon": "/images/favicon.png",
   "appearance": {
     "default": "light"
   },
   "navigation": {
     "groups": [
       {
-        "group": "Reference",
+        "group": "Resources",
         "pages": ["glossary", "changelog"]
       }
     ]
