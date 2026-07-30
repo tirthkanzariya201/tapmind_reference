@@ -4,28 +4,54 @@
   "name": "TapMind Resources",
   "description": "Glossary and changelog for TapMind SDK Integration",
   "theme": "jam",
+  "tabsPosition": "top",
   "colors": {
-    "primary": "#FE7B49"
-  },
-  "logo": {
-    "light": "/images/logo-light.png"
+    "primary": "#FE7B49",
+    "light": "#FE7B49",
+    "dark": "#FE7B49"
   },
   "favicon": "/images/favicon.png",
+  "logo": {
+    "light": "/images/logo-light.png",
+    "dark": "/images/logo-dark.png"
+  },
+  "interaction": {
+    "drilldown": false
+  },
   "appearance": {
-    "default": "light"
+    "default": "light",
+    "strict": true
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://platform.tapmind.io/"
+    }
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Resources",
-        "pages": ["glossary", "changelog"]
+        "tab": "Resources",
+        "icon": "book",
+        "pages": [
+          {
+            "page": "glossary",
+            "title": "Glossary"
+          },
+          {
+            "page": "changelog",
+            "title": "Changelog"
+          }
+        ]
       }
     ]
   },
   "redirects": [
     {
       "source": "/",
-      "destination": "/glossary"
+      "destination": "/glossary",
+      "permanent": false
     }
   ]
 }

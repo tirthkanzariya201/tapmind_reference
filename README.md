@@ -84,9 +84,11 @@ Or: `npm run deploy` after `npm install` and login.
 └── .github/workflows/validate.yml
 ```
 
-## Branding
+## Branding / UI
 
-- Site name: `TapMind Resources` in `docs.json`
-- Logo: `/images/logo-light.png`
-- Favicon: `/images/favicon.png`
-- Primary accent: `#FE7B49`
+UI matches [docs.tapmind.io](https://docs.tapmind.io) (`TapMind CA Integration`):
+
+- Theme `jam`, primary `#FE7B49`, light-only (`appearance.strict`)
+- Logo light/dark + favicon under `images/`
+- Navbar **Get Started** → `https://platform.tapmind.io/`
+- Shared `style.css` (logo size, prose, callouts, code blocks)

@@ -1,0 +1,328 @@
+/* TapMind — header logo */
+header img[alt$=" logo"],
+nav img[alt$=" logo"] {
+  height: 40px !important;
+  max-width: 320px !important;
+  width: auto !important;
+}
+
+/* ─── Sidebar hierarchy ─────────────────────────────────────────── */
+
+/* Section labels: "Product", "Overview" */
+aside .sidebar-nav-groups .ml-6 > button > span {
+  font-size: 0.6875rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #94a3b8) !important;
+}
+
+/* Product folders: "Custom Adapter GMA SDK", etc. */
+aside .nav-group-l1 {
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text-primary) !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+aside .nav-group-l1 + div {
+  margin-left: 0.5rem !important;
+  padding-left: 0.625rem !important;
+  border-left: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+/* Mediation / leaf pages under a product */
+aside .nav-group-l1 + div ul li a {
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
+  color: var(--color-text-secondary) !important;
+  padding-left: 0.5rem !important;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0 !important;
+}
+
+aside .nav-group-l1 + div ul li a.nav-active {
+  color: var(--color-primary) !important;
+  font-weight: 600 !important;
+  border-left-color: var(--color-primary) !important;
+  background: transparent !important;
+}
+
+/* Top-level pages: "Introduction", "Gradle Setup" */
+aside .sidebar-nav-groups .ml-6 > div > ul > li > a {
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  padding-left: 0.625rem !important;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0 !important;
+}
+
+aside .sidebar-nav-groups .ml-6 > div > ul > li > a.nav-active {
+  font-weight: 600 !important;
+  border-left-color: var(--color-primary) !important;
+  background: transparent !important;
+}
+
+/* ─── Line spacing / paragraph rhythm (restore previous density) ─── */
+
+#content-area p,
+article p,
+.prose p {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.55rem !important;
+  line-height: 1.55 !important;
+}
+
+#content-area ul,
+#content-area ol,
+article ul,
+article ol,
+.prose ul,
+.prose ol {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.55rem !important;
+  padding-left: 1.25rem;
+}
+
+#content-area li,
+article li,
+.prose li {
+  margin-top: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
+  line-height: 1.5 !important;
+}
+
+#content-area li > p,
+article li > p,
+.prose li > p {
+  margin-top: 0 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.prose p.text-theme-text-secondary,
+#content-area p.text-theme-text-secondary,
+article p.text-theme-text-secondary {
+  line-height: 1.55 !important;
+}
+
+/* ─── Info callouts — GitBook-style (no outer border box) ───────── */
+
+.prose div:has(> .callout-content),
+#content-area div:has(> .callout-content),
+article div:has(> .callout-content) {
+  background: #f0f7fd !important;
+  border: none !important;
+  border-left: 3px solid #60a5fa !important;
+  border-radius: 6px !important;
+  padding: 0.6rem 0.85rem !important;
+  margin: 0.65rem 0 !important;
+  box-shadow: none !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+}
+
+.prose div:has(> .callout-content) > .flex-shrink-0,
+#content-area div:has(> .callout-content) > .flex-shrink-0 {
+  display: none !important;
+}
+
+.callout-content {
+  color: #334155 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+.callout-content strong {
+  display: inline;
+  font-weight: 600 !important;
+  color: #1e3a5f !important;
+  font-size: inherit !important;
+}
+
+/* Prerequisite titles above bullet lists */
+.callout-content > p:has(+ ul) > strong {
+  display: block;
+  margin-bottom: 0.25rem !important;
+  color: #1e40af !important;
+  font-size: 0.875rem !important;
+}
+
+/* Arrow-path hints — single horizontal flow (GitBook style) */
+.callout-content > p {
+  margin: 0 !important;
+  line-height: 1.45 !important;
+}
+
+.callout-content > p:only-child {
+  display: block;
+}
+
+.callout-content ul {
+  margin: 0 !important;
+  padding-left: 1.1rem !important;
+}
+
+.callout-content li {
+  margin: 0.1rem 0 !important;
+}
+
+/* Warning callouts */
+.prose div:has(> .callout-content)[style*="warning"],
+.prose div:has(> .callout-content):has(.fa-triangle-exclamation) {
+  background: #fffbeb !important;
+  border-left-color: #f59e0b !important;
+}
+
+/* ─── Code blocks — GitBook-style config snippets ─────────────── */
+
+.prose pre:not([class*="shiki"]),
+#content-area pre:not([class*="shiki"]),
+article pre:not([class*="shiki"]) {
+  background: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+  border-radius: 6px !important;
+  padding: 0.65rem 0.9rem !important;
+  margin: 0.35rem 0 0.6rem !important;
+  font-size: 0.8125rem !important;
+  line-height: 1.5 !important;
+  overflow-x: auto;
+  box-shadow: none !important;
+}
+
+.prose pre:not([class*="shiki"]) code,
+#content-area pre:not([class*="shiki"]) code,
+article pre:not([class*="shiki"]) code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  color: #3c4043 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word;
+  font-size: inherit !important;
+}
+
+/* Gradle setup — tighter vertical spacing in repository code blocks */
+.gradle-code-compact pre,
+.gradle-code-compact pre code {
+  line-height: 1.3 !important;
+  padding-top: 0.45rem !important;
+  padding-bottom: 0.45rem !important;
+  margin: 0 !important;
+}
+
+.prose pre.shiki,
+#content-area pre.shiki,
+article pre.shiki {
+  margin: 0.45rem 0 0.65rem !important;
+  border-radius: 6px !important;
+  font-size: 0.8125rem !important;
+  border: 1px solid #e1e4e8 !important;
+}
+
+.prose p + pre,
+.prose pre + p,
+#content-area p + pre,
+#content-area pre + p {
+  margin-top: 0.35rem !important;
+}
+
+.prose :not(pre) > code,
+#content-area :not(pre) > code {
+  background: #f0f2f5 !important;
+  padding: 0.12em 0.35em !important;
+  border-radius: 4px !important;
+  font-size: 0.875em !important;
+  border: none !important;
+}
+
+/* ─── Class & Network Key Registry tables (4-column only) ───────── */
+
+/* Scope to registry page tables only — not Orchestration error reference or other 4-col tables */
+#content-area table.registry-table,
+article table.registry-table,
+.prose table.registry-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+}
+
+#content-area table.registry-table th:nth-child(1),
+#content-area table.registry-table td:nth-child(1),
+article table.registry-table th:nth-child(1),
+article table.registry-table td:nth-child(1),
+.prose table.registry-table th:nth-child(1),
+.prose table.registry-table td:nth-child(1) {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  vertical-align: top !important;
+  width: 13% !important;
+}
+
+#content-area table.registry-table th:nth-child(2),
+#content-area table.registry-table td:nth-child(2),
+article table.registry-table th:nth-child(2),
+article table.registry-table td:nth-child(2),
+.prose table.registry-table th:nth-child(2),
+.prose table.registry-table td:nth-child(2) {
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: anywhere !important;
+  vertical-align: top !important;
+  padding-left: 0.65rem !important;
+  padding-right: 0.65rem !important;
+}
+
+#content-area table.registry-table th:nth-child(2),
+#content-area table.registry-table td:nth-child(2),
+article table.registry-table th:nth-child(2),
+article table.registry-table td:nth-child(2),
+.prose table.registry-table th:nth-child(2),
+.prose table.registry-table td:nth-child(2) {
+  width: 18% !important;
+}
+
+#content-area table.registry-table th:nth-child(3),
+#content-area table.registry-table td:nth-child(3),
+#content-area table.registry-table th:nth-child(4),
+#content-area table.registry-table td:nth-child(4),
+article table.registry-table th:nth-child(3),
+article table.registry-table td:nth-child(3),
+article table.registry-table th:nth-child(4),
+article table.registry-table td:nth-child(4),
+.prose table.registry-table th:nth-child(3),
+.prose table.registry-table td:nth-child(3),
+.prose table.registry-table th:nth-child(4),
+.prose table.registry-table td:nth-child(4) {
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  vertical-align: top !important;
+  width: 34.5% !important;
+}
+
+#content-area table.registry-table td:nth-child(3) code,
+#content-area table.registry-table td:nth-child(4) code,
+article table.registry-table td:nth-child(3) code,
+article table.registry-table td:nth-child(4) code,
+.prose table.registry-table td:nth-child(3) code,
+.prose table.registry-table td:nth-child(4) code {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+  display: inline !important;
+  line-height: 1.45 !important;
+  user-select: all !important;
+  cursor: text !important;
+}
+
+/* Safety rule for any other tables with long inline code tokens */
+#content-area table td code,
+article table td code,
+.prose table td code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
