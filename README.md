@@ -5,7 +5,7 @@ Minimal [Jamdesk](https://jamdesk.com) documentation site for TapMind SDK Integr
 | Page | Path | Live URL |
 |------|------|----------|
 | Glossary | `glossary.mdx` | `/glossary` |
-| Changelog | `changelog.mdx` | `/changelog` |
+| Change logs | `changelog.mdx` | `/changelog` |
 
 `/` redirects to `/glossary`.
 

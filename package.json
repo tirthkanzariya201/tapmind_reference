@@ -2,7 +2,7 @@
   "name": "tapmind-resources",
   "version": "1.0.0",
   "private": true,
-  "description": "TapMind Resources — Glossary and Changelog (Jamdesk)",
+  "description": "TapMind Resources — Glossary and Change logs (Jamdesk)",
   "scripts": {
     "dev": "jamdesk dev --port 3457",
     "validate": "jamdesk validate",

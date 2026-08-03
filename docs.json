@@ -2,7 +2,7 @@
   "$schema": "https://jamdesk.com/docs.json",
   "projectId": "a7pYkYzx1U0EkFGx7BoW",
   "name": "TapMind Resources",
-  "description": "Glossary and changelog for TapMind SDK Integration",
+  "description": "Glossary and change logs for TapMind SDK Integration",
   "theme": "jam",
   "tabsPosition": "top",
   "colors": {
@@ -41,7 +41,7 @@
           },
           {
             "page": "changelog",
-            "title": "Changelog"
+            "title": "Change logs"
           }
         ]
       }
