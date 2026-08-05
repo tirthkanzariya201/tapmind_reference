@@ -1,0 +1,42 @@
+---
+title: Backend Release Notes
+description: Release notes for TapMind backend services.
+---
+
+<Info title="Legend">
+- <Badge color="green" size="sm" shape="pill">feat</Badge> new feature
+- <Badge color="blue" size="sm" shape="pill">fix</Badge> bug fix
+- <Badge color="red" size="sm" shape="pill">fix!</Badge> breaking fix
+- <Badge color="gray" size="sm" shape="pill">chore</Badge> maintenance / no functional change
+</Info>
+
+## Release Notes - 3 August 2026
+
+**Reporting Module**
+
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Added Demand Partner ID as a new reporting dimension
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Added Ad Tag Rotation Count as a new reporting metric to provide better visibility into ad tag rotation performance
+
+---
+
+## Release Notes - 29 July 2025 (v1.4.2)
+
+**Frontend**
+
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Demand Partner wise performance table added on dashboard
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Ad Refresh toggle for Banner ads to enable Ad Refresh
+- <Badge color="green" size="sm" shape="pill">feat</Badge> UI to set Refresh duration, Retry Duration, and Retry Attempts when Ad Refresh is enabled
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Removed option to add configurations; added Refresh Config to select demand tags used for ad refresh
+
+---
+
+**Backend**
+
+- <Badge color="blue" size="sm" shape="pill">fix</Badge> Banner ad refresh flow
+
+---
+
+**Serving**
+
+- <Badge color="blue" size="sm" shape="pill">fix</Badge> Bid Request API refreshes the adapters array
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Bid Request API accepts banner ad type events in the payload and stores them in the impression collection with 3 additional keys

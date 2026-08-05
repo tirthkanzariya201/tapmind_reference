@@ -7,345 +7,325 @@ description: >-
 
 ## Products
 
-This glossary covers the following products only:
+This glossary covers the following products only. Orchestration SDK terms are deferred.
 
-| Product | Scope |
+Use the **Product** column abbreviations in each module table:
+
+| Abbreviation | Product |
 | --- | --- |
-| **Custom Adapter (GMA SDK)** | Included |
-| **Custom Adapter (GMA Next-Gen SDK)** | Included |
+| **CA-GMA** | Custom Adapter (GMA SDK) |
+| **CA-NG** | Custom Adapter (GMA Next-Gen SDK) |
 
-Orchestration SDK terms are deferred.
+When a keyword applies to more than one product, abbreviations are comma-separated (for example, `CA-GMA, CA-NG`).
 
-Each keyword below lists the **Module** name exactly as defined in the TapMind CA source sheet, with the formula kept inside the definition when one applies.
+Each section below is a **Module** as defined in the TapMind CA source sheet. Formulas stay inside the description when one applies.
+
+> **Note:** Rows currently marked `CA-GMA, CA-NG` inherit the previous module-level scope. Narrow a row to `CA-GMA` or `CA-NG` alone when a keyword belongs to only one product.
 
 ---
 
 ## Dashboard
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Total Ad Requests | Total number of ad requests received from the SDK. |
-| Responses Served | Number of requests for which an ad was successfully loaded and returned to the app. |
-| Fill Rate | Percentage of ad requests that got an ad response. **(Responses Served ÷ Total Ad Requests) × 100** |
-| Impressions | Number of ads actually displayed on the user's screen. |
-| Show Rate | Of the ads that were served, the percentage that were actually displayed. **(Impressions ÷ Responses Served) × 100** |
-| Clicks | Number of times users clicked on a displayed ad. |
-| CTR | Percentage of displayed ads that were clicked. **(Clicks ÷ Impressions) × 100** |
-| Net Fill Rate | Percentage of ad requests that resulted in an actual on-screen impression. **(Impressions ÷ Total Ad Requests) × 100** |
-| Success Rate | The percentage of total ad requests that were processed successfully without any errors or failures. **(Success Requests ÷ Total Requests) × 100** |
-| Success Requests | Number of instruction payload fetches that completed successfully. |
-| Failed Requests | Number of instruction payload fetches that failed. |
-| Error Code | The unique code the server returned for the failure. |
-| Name | Human-readable name of that error. |
-| Severity | Impact level of the error. |
-| Failed Count | Number of failed requests with that error code in the selected date range. **(Failed Count ÷ total failures) × 100** |
-| Ad Format | The type or layout of an advertisement that determines how it is displayed within an app or website. Banner, Interstitial, Native, Rewarded. |
-| Mediation Partner | A third-party advertising platform integrated with the mediation system that competes to serve ads for a placement. The mediation platform sends ad requests to configured partners and selects the best available ad based on priority, bidding, or other optimization rules to maximize fill rate and revenue. |
-| Device Country | The country associated with the user's device at the time an ad request is made. |
-| Placement | A placement is a predefined location or context within an application where an advertisement is requested, loaded, and displayed. |
-| CPM (Cost Per Mille) | The configured price per 1,000 impressions for a placement. |
-| Calc Revenue | Estimated revenue for a placement based on its configured CPM and actual impressions. **(CPM × Impressions) ÷ 1000** |
-| oCPM | Revenue normalized per 1,000 ad requests (not impressions). Shows how much each request is actually worth after fill and show losses. **(Calc Revenue ÷ Total Ad Requests) × 1000** |
-| Total Requests | Total number of ad requests sent from the Publisher App to the Backend. |
-| Success Requests | Requests sent from the Publisher App to the Backend that successfully return a valid ad response. |
-| Failed Requests | Requests sent from the Publisher App to the Backend that fail due to an error. |
-| Total Impressions | Total number of times an advertisement was successfully displayed to users and the `onAdImpression()` event was triggered. |
-| Timeout Requests | Backend does not return a response within the configured timeout period. |
-| Match Request | A Matched Request occurs when an ad request successfully finds an available ad from a demand partner. |
-| Fill Rate | The fill rate represents the percentage of match requests that resulted in impressions. **Total Impressions ÷ Matched Requests × 100** |
-| App Name | Name of the publisher's mobile application. |
-| Publisher | A company/app owner who displays advertisements inside their application to earn revenue. |
-| Version | Publisher application's version. |
-| SDK | SDK is a collection of libraries, APIs, tools, and documentation that is integrated into the publisher's application. |
-| Platform | The platform of the user's device (Android or iOS). |
-| Total Revenue | Total Revenue is the total ad earnings generated from all impressions and clicks. |
-| Version name | Publisher application's version. |
-| Count | The total number of times a particular event occurred for that app version. |
-| onAdLoaded | Triggered when an ad is successfully loaded and is ready to be displayed to the user. |
-| onAdImpression | Triggered when the ad is successfully displayed to the user and an impression is recorded. |
-| onAdClicked | Triggered when the user clicks or taps on the displayed ad. |
-| onAdOpened | Triggered when the ad opens and takes over the screen or launches the advertiser's content. |
-| onAdClosed | Triggered when the user closes the ad and returns to the application. |
-| onAdDismissedFullScreenContent | Triggered when a full-screen ad (such as an interstitial or rewarded ad) is dismissed by the user. |
-| onAdShowedFullScreenContent | Triggered when a full-screen ad is successfully shown to the user. |
-| onAdFailedToShowFullScreenContent | Triggered when an ad was loaded but could not be displayed due to an error. |
-| revenue | Triggered when the SDK receives revenue information for an ad impression, representing the amount earned from the displayed ad. |
-| Placement Name | Placement Name is the name given to a particular ad position in an app where ads are requested, loaded, and displayed. |
-| Name | The display name of the publisher. |
-| Package ID / Bundle ID / Domain | The unique identifier of the publisher's application or website used to identify and validate ad requests. Examples: Android Package ID (`com.example.app`), iOS Bundle ID (`com.example.app`), or Website Domain (`example.com`). |
-| Status | Status represents whether a publisher account is currently enabled (Active) or disabled (Inactive). |
-| Type | The platform on which the publisher's application or property is running, such as Android, iOS, or Web. |
-| Assigned To | The user or account manager responsible for managing and supporting the publisher configuration. |
-| Create Time | The date and time when the publisher was created and registered in the platform. |
-| Configuration | The settings section used to manage the publisher's configuration, including placements, ad unit mappings, SDK settings, and other publisher-specific parameters. |
-| Version | The list of application versions configured for the publisher. |
-| Partners | The ad networks or demand sources (such as GAM, AdMob, or third-party partners) configured for the publisher to serve advertisements and generate revenue. |
-| Ad Partner Name | The name of the ad network or demand partner (for example, Unity Level Play, AdMob, AppLovin, or IronSource) integrated with the publisher to serve advertisements and generate revenue. |
-| Min SDK Version | The minimum version of the SDK required for the selected ad partner to be supported and function correctly within the application. |
-| Placements | The list of ad locations configured within the application where advertisements can be requested and displayed, such as Banner, Interstitial, Native, or Rewarded placements. |
-| Placement ID | A unique system-generated identifier assigned to a specific ad placement for configuration, management, and reporting purposes. |
-| Placement Name | A unique, human-readable name used to identify a specific ad location within the application and map ad requests to the corresponding ad configuration and Ad Unit IDs. |
-| Status | Indicates whether the placement is Active (enabled to request and display ads) or Inactive (disabled and not serving ads). |
-| Created | The date and time when the placement was created and added to the publisher's configuration. |
-| Actions | The set of available operations that can be performed on a placement, such as viewing, editing, or updating its configuration. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Total Ad Requests | CA-GMA, CA-NG | Total number of ad requests received from the SDK. |
+| Responses Served | CA-GMA, CA-NG | Number of requests for which an ad was successfully loaded and returned to the app. |
+| Fill Rate | CA-GMA, CA-NG | Percentage of ad requests that got an ad response. **(Responses Served ÷ Total Ad Requests) × 100** |
+| Impressions | CA-GMA, CA-NG | Number of ads actually displayed on the user's screen. |
+| Show Rate | CA-GMA, CA-NG | Of the ads that were served, the percentage that were actually displayed. **(Impressions ÷ Responses Served) × 100** |
+| Clicks | CA-GMA, CA-NG | Number of times users clicked on a displayed ad. |
+| CTR | CA-GMA, CA-NG | Percentage of displayed ads that were clicked. **(Clicks ÷ Impressions) × 100** |
+| Net Fill Rate | CA-GMA, CA-NG | Percentage of ad requests that resulted in an actual on-screen impression. **(Impressions ÷ Total Ad Requests) × 100** |
+| Success Rate | CA-GMA, CA-NG | The percentage of total ad requests that were processed successfully without any errors or failures. **(Success Requests ÷ Total Requests) × 100** |
+| Success Requests | CA-GMA, CA-NG | Number of instruction payload fetches that completed successfully. |
+| Failed Requests | CA-GMA, CA-NG | Number of instruction payload fetches that failed. |
+| Error Code | CA-GMA, CA-NG | The unique code the server returned for the failure. |
+| Name | CA-GMA, CA-NG | Human-readable name of that error. |
+| Severity | CA-GMA, CA-NG | Impact level of the error. |
+| Failed Count | CA-GMA, CA-NG | Number of failed requests with that error code in the selected date range. **(Failed Count ÷ total failures) × 100** |
+| Ad Format | CA-GMA, CA-NG | The type or layout of an advertisement that determines how it is displayed within an app or website. Banner, Interstitial, Native, Rewarded. |
+| Mediation Partner | CA-GMA, CA-NG | A third-party advertising platform integrated with the mediation system that competes to serve ads for a placement. The mediation platform sends ad requests to configured partners and selects the best available ad based on priority, bidding, or other optimization rules to maximize fill rate and revenue. |
+| Device Country | CA-GMA, CA-NG | The country associated with the user's device at the time an ad request is made. |
+| Placement | CA-GMA, CA-NG | A placement is a predefined location or context within an application where an advertisement is requested, loaded, and displayed. |
+| CPM (Cost Per Mille) | CA-GMA, CA-NG | The configured price per 1,000 impressions for a placement. |
+| Calc Revenue | CA-GMA, CA-NG | Estimated revenue for a placement based on its configured CPM and actual impressions. **(CPM × Impressions) ÷ 1000** |
+| oCPM | CA-GMA, CA-NG | Revenue normalized per 1,000 ad requests (not impressions). Shows how much each request is actually worth after fill and show losses. **(Calc Revenue ÷ Total Ad Requests) × 1000** |
+| Total Requests | CA-GMA, CA-NG | Total number of ad requests sent from the Publisher App to the Backend. |
+| Success Requests | CA-GMA, CA-NG | Requests sent from the Publisher App to the Backend that successfully return a valid ad response. |
+| Failed Requests | CA-GMA, CA-NG | Requests sent from the Publisher App to the Backend that fail due to an error. |
+| Total Impressions | CA-GMA, CA-NG | Total number of times an advertisement was successfully displayed to users and the `onAdImpression()` event was triggered. |
+| Timeout Requests | CA-GMA, CA-NG | Backend does not return a response within the configured timeout period. |
+| Match Request | CA-GMA, CA-NG | A Matched Request occurs when an ad request successfully finds an available ad from a demand partner. |
+| Fill Rate | CA-GMA, CA-NG | The fill rate represents the percentage of match requests that resulted in impressions. **Total Impressions ÷ Matched Requests × 100** |
+| App Name | CA-GMA, CA-NG | Name of the publisher's mobile application. |
+| Publisher | CA-GMA, CA-NG | A company/app owner who displays advertisements inside their application to earn revenue. |
+| Version | CA-GMA, CA-NG | Publisher application's version. |
+| SDK | CA-GMA, CA-NG | SDK is a collection of libraries, APIs, tools, and documentation that is integrated into the publisher's application. |
+| Platform | CA-GMA, CA-NG | The platform of the user's device (Android or iOS). |
+| Total Revenue | CA-GMA, CA-NG | Total Revenue is the total ad earnings generated from all impressions and clicks. |
+| Version name | CA-GMA, CA-NG | Publisher application's version. |
+| Count | CA-GMA, CA-NG | The total number of times a particular event occurred for that app version. |
+| onAdLoaded | CA-GMA, CA-NG | Triggered when an ad is successfully loaded and is ready to be displayed to the user. |
+| onAdImpression | CA-GMA, CA-NG | Triggered when the ad is successfully displayed to the user and an impression is recorded. |
+| onAdClicked | CA-GMA, CA-NG | Triggered when the user clicks or taps on the displayed ad. |
+| onAdOpened | CA-GMA, CA-NG | Triggered when the ad opens and takes over the screen or launches the advertiser's content. |
+| onAdClosed | CA-GMA, CA-NG | Triggered when the user closes the ad and returns to the application. |
+| onAdDismissedFullScreenContent | CA-GMA, CA-NG | Triggered when a full-screen ad (such as an interstitial or rewarded ad) is dismissed by the user. |
+| onAdShowedFullScreenContent | CA-GMA, CA-NG | Triggered when a full-screen ad is successfully shown to the user. |
+| onAdFailedToShowFullScreenContent | CA-GMA, CA-NG | Triggered when an ad was loaded but could not be displayed due to an error. |
+| revenue | CA-GMA, CA-NG | Triggered when the SDK receives revenue information for an ad impression, representing the amount earned from the displayed ad. |
+| Placement Name | CA-GMA, CA-NG | Placement Name is the name given to a particular ad position in an app where ads are requested, loaded, and displayed. |
+| Name | CA-GMA, CA-NG | The display name of the publisher. |
+| Package ID / Bundle ID / Domain | CA-GMA, CA-NG | The unique identifier of the publisher's application or website used to identify and validate ad requests. Examples: Android Package ID (`com.example.app`), iOS Bundle ID (`com.example.app`), or Website Domain (`example.com`). |
+| Status | CA-GMA, CA-NG | Status represents whether a publisher account is currently enabled (Active) or disabled (Inactive). |
+| Type | CA-GMA, CA-NG | The platform on which the publisher's application or property is running, such as Android, iOS, or Web. |
+| Assigned To | CA-GMA, CA-NG | The user or account manager responsible for managing and supporting the publisher configuration. |
+| Create Time | CA-GMA, CA-NG | The date and time when the publisher was created and registered in the platform. |
+| Configuration | CA-GMA, CA-NG | The settings section used to manage the publisher's configuration, including placements, ad unit mappings, SDK settings, and other publisher-specific parameters. |
+| Version | CA-GMA, CA-NG | The list of application versions configured for the publisher. |
+| Partners | CA-GMA, CA-NG | The ad networks or demand sources (such as GAM, AdMob, or third-party partners) configured for the publisher to serve advertisements and generate revenue. |
+| Ad Partner Name | CA-GMA, CA-NG | The name of the ad network or demand partner (for example, Unity Level Play, AdMob, AppLovin, or IronSource) integrated with the publisher to serve advertisements and generate revenue. |
+| Min SDK Version | CA-GMA, CA-NG | The minimum version of the SDK required for the selected ad partner to be supported and function correctly within the application. |
+| Placements | CA-GMA, CA-NG | The list of ad locations configured within the application where advertisements can be requested and displayed, such as Banner, Interstitial, Native, or Rewarded placements. |
+| Placement ID | CA-GMA, CA-NG | A unique system-generated identifier assigned to a specific ad placement for configuration, management, and reporting purposes. |
+| Placement Name | CA-GMA, CA-NG | A unique, human-readable name used to identify a specific ad location within the application and map ad requests to the corresponding ad configuration and Ad Unit IDs. |
+| Status | CA-GMA, CA-NG | Indicates whether the placement is Active (enabled to request and display ads) or Inactive (disabled and not serving ads). |
+| Created | CA-GMA, CA-NG | The date and time when the placement was created and added to the publisher's configuration. |
+| Actions | CA-GMA, CA-NG | The set of available operations that can be performed on a placement, such as viewing, editing, or updating its configuration. |
 
 ---
 
 ## Publisher
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Placement Name | A unique, human-readable name used to identify a specific ad location within the application where advertisements are requested and displayed. |
-| Placement CPM | The configured Cost Per Mille (CPM) value for the placement, representing the estimated revenue earned per 1,000 ad impressions for that placement. |
-| Timeout (3000 to 9000 ms) | The maximum time, in milliseconds, that the SDK waits for an ad response from a demand partner before the request times out and proceeds to the next available ad source or returns a failure. |
-| Ad Type | The format of the advertisement configured for the placement, such as Banner, Interstitial, Rewarded, Native. |
-| Demand Partner Type | The ad network or demand source (for example, AdMob, Unity Level Play, AppLovin, etc.) configured to serve ads for the placement. |
-| Ad Unit ID | A unique identifier assigned by the ad network to a specific ad placement, used to request, serve, and track advertisements. |
-| Priority | The serving order assigned to the demand partner, determining which partner is considered first when multiple demand partners are configured for the same placement. Lower values typically indicate higher priority. |
-| TTL (Time To Live) | The duration for which a loaded ad remains valid and can be displayed before it expires and requires a new ad request. |
-| CPM (Cost Per Mille) | The configured or estimated revenue earned for every 1,000 ad impressions served by the demand partner. |
-| Sizes (Width × Height) | The dimensions of the ad creative, specified in pixels, that define the supported ad size for the placement (for example, 320 × 50 for a banner ad). |
-| Publisher ID | Publisher ID is a unique system-generated identifier assigned to each publisher. |
-| Publisher Name | Name of the company or app owner. |
-| Status | Status represents whether a publisher account is currently enabled (Active) or disabled (Inactive). |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Placement Name | CA-GMA, CA-NG | A unique, human-readable name used to identify a specific ad location within the application where advertisements are requested and displayed. |
+| Placement CPM | CA-GMA, CA-NG | The configured Cost Per Mille (CPM) value for the placement, representing the estimated revenue earned per 1,000 ad impressions for that placement. |
+| Timeout (3000 to 9000 ms) | CA-GMA, CA-NG | The maximum time, in milliseconds, that the SDK waits for an ad response from a demand partner before the request times out and proceeds to the next available ad source or returns a failure. |
+| Ad Type | CA-GMA, CA-NG | The format of the advertisement configured for the placement, such as Banner, Interstitial, Rewarded, Native. |
+| Demand Partner Type | CA-GMA, CA-NG | The ad network or demand source (for example, AdMob, Unity Level Play, AppLovin, etc.) configured to serve ads for the placement. |
+| Ad Unit ID | CA-GMA, CA-NG | A unique identifier assigned by the ad network to a specific ad placement, used to request, serve, and track advertisements. |
+| Priority | CA-GMA, CA-NG | The serving order assigned to the demand partner, determining which partner is considered first when multiple demand partners are configured for the same placement. Lower values typically indicate higher priority. |
+| TTL (Time To Live) | CA-GMA, CA-NG | The duration for which a loaded ad remains valid and can be displayed before it expires and requires a new ad request. |
+| CPM (Cost Per Mille) | CA-GMA, CA-NG | The configured or estimated revenue earned for every 1,000 ad impressions served by the demand partner. |
+| Sizes (Width × Height) | CA-GMA, CA-NG | The dimensions of the ad creative, specified in pixels, that define the supported ad size for the placement (for example, 320 × 50 for a banner ad). |
+| Publisher ID | CA-GMA, CA-NG | Publisher ID is a unique system-generated identifier assigned to each publisher. |
+| Publisher Name | CA-GMA, CA-NG | Name of the company or app owner. |
+| Status | CA-GMA, CA-NG | Status represents whether a publisher account is currently enabled (Active) or disabled (Inactive). |
 
 ---
 
 ## App
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| App ID | A unique system-generated identifier assigned to each application. |
-| App Name | The name of the publisher's mobile application. |
-| Publisher Name | The name of the company or app owner that owns and manages the application. |
-| Platform | The operating system on which the application runs, such as Android or iOS. |
-| Status | Indicates whether the application is currently enabled (Active) or disabled (Inactive). |
-| Package ID / Bundle ID | The unique identifier of the application in the respective platform. For Android, this is the Package ID (e.g., `com.example.app`), and for iOS, this is the Bundle ID. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| App ID | CA-GMA, CA-NG | A unique system-generated identifier assigned to each application. |
+| App Name | CA-GMA, CA-NG | The name of the publisher's mobile application. |
+| Publisher Name | CA-GMA, CA-NG | The name of the company or app owner that owns and manages the application. |
+| Platform | CA-GMA, CA-NG | The operating system on which the application runs, such as Android or iOS. |
+| Status | CA-GMA, CA-NG | Indicates whether the application is currently enabled (Active) or disabled (Inactive). |
+| Package ID / Bundle ID | CA-GMA, CA-NG | The unique identifier of the application in the respective platform. For Android, this is the Package ID (e.g., `com.example.app`), and for iOS, this is the Bundle ID. |
 
 ---
 
 ## Placements
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Placement ID | A unique system-generated identifier assigned to each placement. |
-| Placement Name | A user-defined name that identifies a specific ad slot or location within an application. |
-| Placement Code | A unique code used to request and load ads for a particular placement. |
-| Inventory | The list of ad formats enabled for the placement, such as Interstitial, Native, Rewarded Interstitial, and Banner. |
-| Status | Indicates whether the placement is currently enabled (Active) or disabled (Inactive). |
-| Actions | Provides options to manage or modify the placement configuration, such as editing placement details. |
-| Publisher | The company or app owner that owns the application. |
-| App | The specific mobile application to which the placement belongs and where ads will be served. |
-| CPM | Cost Per Mille (CPM). |
-| Configuration | The settings that define which ad formats and behaviors are enabled for the placement, such as Interstitial, Banner, Native, and Rewarded ads. |
-| Enable Icon | A toggle that enables or disables a specific ad inventory or configuration for Tapmind logo. |
-| Cross Button Delay | The amount of time (usually in seconds) before the close (X) button becomes visible on a full-screen ad. |
-| Overall Waterfall Timeout (2000-5000 ms) | The maximum time the SDK waits for all demand tags and inventories in the waterfall to respond before stopping the ad request process. |
-| Ad Refresh (s) | The time interval, in seconds, after which a new ad request is automatically made to refresh the currently displayed ad. |
-| Error Retry (s) | The waiting time, in seconds, before the SDK retries loading an ad after a previous ad request has failed. |
-| Demand Tags | A collection of demand partner configurations for a placement. Each demand tag represents a specific ad source that can serve ads for that placement. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Placement ID | CA-GMA, CA-NG | A unique system-generated identifier assigned to each placement. |
+| Placement Name | CA-GMA, CA-NG | A user-defined name that identifies a specific ad slot or location within an application. |
+| Placement Code | CA-GMA, CA-NG | A unique code used to request and load ads for a particular placement. |
+| Inventory | CA-GMA, CA-NG | The list of ad formats enabled for the placement, such as Interstitial, Native, Rewarded Interstitial, and Banner. |
+| Status | CA-GMA, CA-NG | Indicates whether the placement is currently enabled (Active) or disabled (Inactive). |
+| Actions | CA-GMA, CA-NG | Provides options to manage or modify the placement configuration, such as editing placement details. |
+| Publisher | CA-GMA, CA-NG | The company or app owner that owns the application. |
+| App | CA-GMA, CA-NG | The specific mobile application to which the placement belongs and where ads will be served. |
+| CPM | CA-GMA, CA-NG | Cost Per Mille (CPM). |
+| Configuration | CA-GMA, CA-NG | The settings that define which ad formats and behaviors are enabled for the placement, such as Interstitial, Banner, Native, and Rewarded ads. |
+| Enable Icon | CA-GMA, CA-NG | A toggle that enables or disables a specific ad inventory or configuration for Tapmind logo. |
+| Cross Button Delay | CA-GMA, CA-NG | The amount of time (usually in seconds) before the close (X) button becomes visible on a full-screen ad. |
+| Overall Waterfall Timeout (2000-5000 ms) | CA-GMA, CA-NG | The maximum time the SDK waits for all demand tags and inventories in the waterfall to respond before stopping the ad request process. |
+| Ad Refresh (s) | CA-GMA, CA-NG | The time interval, in seconds, after which a new ad request is automatically made to refresh the currently displayed ad. |
+| Error Retry (s) | CA-GMA, CA-NG | The waiting time, in seconds, before the SDK retries loading an ad after a previous ad request has failed. |
+| Demand Tags | CA-GMA, CA-NG | A collection of demand partner configurations for a placement. Each demand tag represents a specific ad source that can serve ads for that placement. |
 
 ## Demand Tags
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Demand Tag Name | A user-defined name used to identify a specific demand tag configuration. |
-| Yield Partner | The ad network or demand partner responsible for serving ads, such as AdMob, Meta, AppLovin, etc. |
-| Priority | The order in which demand tags are evaluated in the waterfall. A lower number indicates a higher priority (e.g., Priority 1 is checked before Priority 2). |
-| Tag Timeout | The maximum time, in seconds, that the SDK waits for a response from a demand tag before moving to the next one in the waterfall. |
-| Ad Tag | The unique ad unit identifier or ad tag provided by the demand partner and used by the SDK to request ads from that partner. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Demand Tag Name | CA-GMA, CA-NG | A user-defined name used to identify a specific demand tag configuration. |
+| Yield Partner | CA-GMA, CA-NG | The ad network or demand partner responsible for serving ads, such as AdMob, Meta, AppLovin, etc. |
+| Priority | CA-GMA, CA-NG | The order in which demand tags are evaluated in the waterfall. A lower number indicates a higher priority (e.g., Priority 1 is checked before Priority 2). |
+| Tag Timeout | CA-GMA, CA-NG | The maximum time, in seconds, that the SDK waits for a response from a demand tag before moving to the next one in the waterfall. |
+| Ad Tag | CA-GMA, CA-NG | The unique ad unit identifier or ad tag provided by the demand partner and used by the SDK to request ads from that partner. |
 
 ---
 
 ## Error Events
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Error Events | The total number of error occurrences generated by the SDK, application, or backend during the selected time period, regardless of severity. |
-| Critical Events | The total number of high-severity error events that can significantly impact ad serving, SDK functionality, or application performance and require immediate attention. |
-| Top Error Code | The error code with the highest number of occurrences during the selected time period, along with its corresponding error description and event count. |
-| Error Log Stream | A real-time stream of errors and exceptions generated by the SDK, application, or backend services, used for monitoring, troubleshooting, and debugging issues. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Error Events | CA-GMA, CA-NG | The total number of error occurrences generated by the SDK, application, or backend during the selected time period, regardless of severity. |
+| Critical Events | CA-GMA, CA-NG | The total number of high-severity error events that can significantly impact ad serving, SDK functionality, or application performance and require immediate attention. |
+| Top Error Code | CA-GMA, CA-NG | The error code with the highest number of occurrences during the selected time period, along with its corresponding error description and event count. |
+| Error Log Stream | CA-GMA, CA-NG | A real-time stream of errors and exceptions generated by the SDK, application, or backend services, used for monitoring, troubleshooting, and debugging issues. |
 
 ---
 
 ## Error Logs
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Date | The date on which the error event was generated and recorded in the system. |
-| Hour | The specific time (hour) at which the error event occurred and was logged. |
-| Code | A unique error code that identifies a specific error type or failure condition, along with its corresponding error description and severity level. |
-| Package | The application's Package ID (Android) or Bundle ID (iOS) associated with the error event. |
-| Platform | The operating system (Android or iOS) on which the error occurred. |
-| Version | The application or SDK version associated with the error event, helping identify issues specific to a particular release. |
-| Placement | The ad placement where the error occurred, identifying the specific location in the application that triggered the error event. |
-| Ad Type | The format of the advertisement associated with the error event, such as Banner, Interstitial, Rewarded, Native. |
-| Count | The total number of times the specific error event occurred for the corresponding application, version, placement, and ad type during the selected time period. |
-| Alert Emails | A section that displays email notifications generated when predefined error thresholds or critical conditions are met, helping administrators monitor and respond to issues promptly. |
-| Threshold Alert Emails | A list of alert email records triggered when the number of error events exceeds the configured threshold during the selected time period. |
-| Hour | The hour at which the threshold alert was triggered and the email notification was generated. |
-| Code | The error code that triggered the threshold alert, identifying the specific error type or failure condition. |
-| App | The name of the application associated with the threshold alert. |
-| Package | The application's Package ID (Android) or Bundle ID (iOS) associated with the threshold alert. |
-| Platform | The operating system (Android, iOS, or Web) on which the threshold alert occurred. |
-| Version | The application or SDK version associated with the threshold alert. |
-| Placement | The ad placement where the threshold alert was triggered. |
-| Ad Type | The advertisement format (such as Banner, Interstitial, Rewarded, or Native) associated with the threshold alert. |
-| Status | The current state of the alert email, indicating whether it is pending, sent, acknowledged, or resolved. |
-| Action | The available operations that can be performed on the alert record, such as viewing details, acknowledging, resending, or resolving the alert. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Date | CA-GMA, CA-NG | The date on which the error event was generated and recorded in the system. |
+| Hour | CA-GMA, CA-NG | The specific time (hour) at which the error event occurred and was logged. |
+| Code | CA-GMA, CA-NG | A unique error code that identifies a specific error type or failure condition, along with its corresponding error description and severity level. |
+| Package | CA-GMA, CA-NG | The application's Package ID (Android) or Bundle ID (iOS) associated with the error event. |
+| Platform | CA-GMA, CA-NG | The operating system (Android or iOS) on which the error occurred. |
+| Version | CA-GMA, CA-NG | The application or SDK version associated with the error event, helping identify issues specific to a particular release. |
+| Placement | CA-GMA, CA-NG | The ad placement where the error occurred, identifying the specific location in the application that triggered the error event. |
+| Ad Type | CA-GMA, CA-NG | The format of the advertisement associated with the error event, such as Banner, Interstitial, Rewarded, Native. |
+| Count | CA-GMA, CA-NG | The total number of times the specific error event occurred for the corresponding application, version, placement, and ad type during the selected time period. |
+| Alert Emails | CA-GMA, CA-NG | A section that displays email notifications generated when predefined error thresholds or critical conditions are met, helping administrators monitor and respond to issues promptly. |
+| Threshold Alert Emails | CA-GMA, CA-NG | A list of alert email records triggered when the number of error events exceeds the configured threshold during the selected time period. |
+| Hour | CA-GMA, CA-NG | The hour at which the threshold alert was triggered and the email notification was generated. |
+| Code | CA-GMA, CA-NG | The error code that triggered the threshold alert, identifying the specific error type or failure condition. |
+| App | CA-GMA, CA-NG | The name of the application associated with the threshold alert. |
+| Package | CA-GMA, CA-NG | The application's Package ID (Android) or Bundle ID (iOS) associated with the threshold alert. |
+| Platform | CA-GMA, CA-NG | The operating system (Android, iOS, or Web) on which the threshold alert occurred. |
+| Version | CA-GMA, CA-NG | The application or SDK version associated with the threshold alert. |
+| Placement | CA-GMA, CA-NG | The ad placement where the threshold alert was triggered. |
+| Ad Type | CA-GMA, CA-NG | The advertisement format (such as Banner, Interstitial, Rewarded, or Native) associated with the threshold alert. |
+| Status | CA-GMA, CA-NG | The current state of the alert email, indicating whether it is pending, sent, acknowledged, or resolved. |
+| Action | CA-GMA, CA-NG | The available operations that can be performed on the alert record, such as viewing details, acknowledging, resending, or resolving the alert. |
 
 ---
 
 ## Configuration
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Configuration ID | A unique system-generated identifier assigned to each configuration record. |
-| Publisher Name | The name of the publisher (company or app owner) to whom the configuration belongs. |
-| Package ID / Bundle ID | The unique identifier of the application. For Android, this is the Package ID, and for iOS, this is the Bundle ID. |
-| App Name | The name of the application for which the configuration is created. |
-| Platform | The operating system on which the application runs, such as Android or iOS. |
-| Publisher App Versions | The specific app version(s) to which this configuration applies. This allows configurations to be enabled or disabled for particular app releases. |
-| Bid Request | Indicates whether the SDK is allowed to send bid requests to the backend for the selected app version(s). If disabled, the SDK will not make bid requests until the configured TTL expires or the setting changes. |
-| Config | Displays the configuration details associated with the selected app version, such as bid request settings, TTL, and other SDK configuration parameters. It allows administrators to view or manage the configuration values applied to that application. |
-| Actions | Provides options to manage the configuration record, such as viewing, editing, enabling, disabling, or updating the configuration settings. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Configuration ID | CA-GMA, CA-NG | A unique system-generated identifier assigned to each configuration record. |
+| Publisher Name | CA-GMA, CA-NG | The name of the publisher (company or app owner) to whom the configuration belongs. |
+| Package ID / Bundle ID | CA-GMA, CA-NG | The unique identifier of the application. For Android, this is the Package ID, and for iOS, this is the Bundle ID. |
+| App Name | CA-GMA, CA-NG | The name of the application for which the configuration is created. |
+| Platform | CA-GMA, CA-NG | The operating system on which the application runs, such as Android or iOS. |
+| Publisher App Versions | CA-GMA, CA-NG | The specific app version(s) to which this configuration applies. This allows configurations to be enabled or disabled for particular app releases. |
+| Bid Request | CA-GMA, CA-NG | Indicates whether the SDK is allowed to send bid requests to the backend for the selected app version(s). If disabled, the SDK will not make bid requests until the configured TTL expires or the setting changes. |
+| Config | CA-GMA, CA-NG | Displays the configuration details associated with the selected app version, such as bid request settings, TTL, and other SDK configuration parameters. It allows administrators to view or manage the configuration values applied to that application. |
+| Actions | CA-GMA, CA-NG | Provides options to manage the configuration record, such as viewing, editing, enabling, disabling, or updating the configuration settings. |
 
 ---
 
 ## Change logs
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| User | The user account that performed the action or change. |
-| Change type | The category of action performed, such as Authentication (Auth), Create, Update, Delete, etc. |
-| Entity Type | The type of system object on which the action was performed, such as Login, Publisher, App, Placement, or Configuration. |
-| Entity Name | The specific name or identifier of the entity that was affected by the action. |
-| Changed at | The date and time when the action or change occurred in the system. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| User | CA-GMA, CA-NG | The user account that performed the action or change. |
+| Change type | CA-GMA, CA-NG | The category of action performed, such as Authentication (Auth), Create, Update, Delete, etc. |
+| Entity Type | CA-GMA, CA-NG | The type of system object on which the action was performed, such as Login, Publisher, App, Placement, or Configuration. |
+| Entity Name | CA-GMA, CA-NG | The specific name or identifier of the entity that was affected by the action. |
+| Changed at | CA-GMA, CA-NG | The date and time when the action or change occurred in the system. |
 
 ---
 
 ## Report (Dimensions)
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Platform | Mobile OS of the app (Android / iOS). Examples: Android, iOS. |
-| App / Package | Publisher app identified by name and package name. Package name of the publisher app, e.g. (`com.cricbuzz.app`). |
-| App Version | Version of the App from which the request was received from SDK, e.g. (`v 4.5.7`). |
-| Placement Name | Placement name configured in the mediation and dashboard. Example: Home Banner, Hero Native, Rewarded Video. |
-| Ad Unit ID | Demand adapter / ad unit string ID under a placement for the Demand Partner. |
-| Ad Type | Ad format/type configured on the placement (Banner, Interstitial, etc.). |
-| Country | Country from which the ad request was received. Based on device locale. |
-| Status Code | Backend response code associated with the request. Example: 200 = Success, 400 = Failure. |
-| Publisher | The company or app owner. |
-| App/Package | The application name and its Package ID (Android) or Bundle ID (iOS) associated with the ad activity. |
-| Platform | The operating system on which the app runs, such as Android or iOS. |
-| Publisher App version | The specific version of the publisher's application from which the ad events were generated. |
-| SDK Version | The version of the SDK integrated into the publisher's application. |
-| Placement Name | The name of the specific ad slot or location within the application where ads are requested and displayed. |
-| Demand Tag | The configured demand source or ad network used to request and serve ads for a placement. |
-| Inventory | The ad format associated with the event, such as Banner, Interstitial, Native, or Rewarded Interstitial. |
-| Device Model | The model of the user's device on which the ad event occurred (for example, Samsung Galaxy S24 or iPhone 15). |
-| Device type | Device type associated with the ad request or event. |
-| Country | The geographic location (country) from which the ad request or event originated. |
-| Total request | Total number of ad requests received from SDK to Backend. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Platform | CA-GMA, CA-NG | Mobile OS of the app (Android / iOS). Examples: Android, iOS. |
+| App / Package | CA-GMA, CA-NG | Publisher app identified by name and package name. Package name of the publisher app, e.g. (`com.cricbuzz.app`). |
+| App Version | CA-GMA, CA-NG | Version of the App from which the request was received from SDK, e.g. (`v 4.5.7`). |
+| Placement Name | CA-GMA, CA-NG | Placement name configured in the mediation and dashboard. Example: Home Banner, Hero Native, Rewarded Video. |
+| Ad Unit ID | CA-GMA, CA-NG | Demand adapter / ad unit string ID under a placement for the Demand Partner. |
+| Ad Type | CA-GMA, CA-NG | Ad format/type configured on the placement (Banner, Interstitial, etc.). |
+| Country | CA-GMA, CA-NG | Country from which the ad request was received. Based on device locale. |
+| Status Code | CA-GMA, CA-NG | Backend response code associated with the request. Example: 200 = Success, 400 = Failure. |
+| Publisher | CA-GMA, CA-NG | The company or app owner. |
+| App/Package | CA-GMA, CA-NG | The application name and its Package ID (Android) or Bundle ID (iOS) associated with the ad activity. |
+| Platform | CA-GMA, CA-NG | The operating system on which the app runs, such as Android or iOS. |
+| Publisher App version | CA-GMA, CA-NG | The specific version of the publisher's application from which the ad events were generated. |
+| SDK Version | CA-GMA, CA-NG | The version of the SDK integrated into the publisher's application. |
+| Placement Name | CA-GMA, CA-NG | The name of the specific ad slot or location within the application where ads are requested and displayed. |
+| Demand Tag | CA-GMA, CA-NG | The configured demand source or ad network used to request and serve ads for a placement. |
+| Inventory | CA-GMA, CA-NG | The ad format associated with the event, such as Banner, Interstitial, Native, or Rewarded Interstitial. |
+| Device Model | CA-GMA, CA-NG | The model of the user's device on which the ad event occurred (for example, Samsung Galaxy S24 or iPhone 15). |
+| Device type | CA-GMA, CA-NG | Device type associated with the ad request or event. |
+| Country | CA-GMA, CA-NG | The geographic location (country) from which the ad request or event originated. |
+| Total request | CA-GMA, CA-NG | Total number of ad requests received from SDK to Backend. |
 
 ---
 
 ## Report (Metrics)
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| GAM Responses Served | Total number of responses returned from Google Ad Manager (GAM) to the application, including both filled and no-fill responses. |
-| GAM Impressions | Total number of ads served from GAM to the application that were successfully displayed to end users. |
-| GAM Clicks | Total number of times users clicked on ads served from GAM to the application. |
-| Cpm | Average revenue earned per 1,000 impressions. **(Revenue / Impressions) × 1000** |
-| Ad Drop & Ad Load Failures | The number of matched ad requests that did not result in an impression. **max(matchedRequests − impressions, 0)** |
-| Revenue | Total advertising revenue generated from ads served and displayed to users. |
-| Match rate | The percentage of total ad requests that successfully resulted in a matched ad response. **(Matched Requests ÷ Total Requests) × 100** |
-| Show Rate | The percentage of matched ad requests that resulted in an ad impression. **(impressions / matchedRequests) × 100** |
-| CTR | Click-Through Rate — the percentage of ad impressions that resulted in a click. **(clicks / impressions) × 100** |
-| Total Requests | Total number of ad requests initiated by the Publisher App through the SDK. |
-| Matched Requests | Number of requests where the backend successfully found an eligible ad from a demand partner. |
-| Impressions | Number of times an ad was actually displayed to the user. |
-| Clicks | Number of times users clicked on an ad. |
-| CPM | Revenue earned per 1,000 impressions. **(Revenue ÷ Impressions) × 1000** |
-| Revenue | Total revenue generated from ad impressions. Sum of revenue amounts. |
-| Ad Drop & Ad Load Failure | Number of ads that failed to load or were discarded before being shown. |
-| Show Rate | Percentage of requests that resulted in an impression. **(Impressions ÷ Total Requests) × 100** |
-| Match Rate | Percentage of requests that got matched. **(Matched Requests ÷ Total Requests) × 100** |
-| Ad Requests | Number of requests sent from SDK to demand partners for ads. |
-| Ad Responses | Number of responses received from demand partners. |
-| Fill Rate | Percentage of requests that received an ad response. **(Ad Responses ÷ Ad Requests) × 100** |
-| No Fill Count | Number of requests where no ad was available from demand partners. **(No Fill Count ÷ Ad Requests) × 100** |
-| Timeouts | Number of ad requests that did not receive a response within the configured timeout period. |
-| Bid Request Timeout Rate | Percentage of requests that timed out. **(Timeouts ÷ Ad Requests) × 100** |
-| No-Fill Rate | Percentage of requests resulting in no fill. **(No Fill Count ÷ Ad Requests) × 100** |
-| Ad Expiry Rate | Cached ads that expired before being shown. **(Expired Ads ÷ Cached Ads) × 100** |
-| Avg Retries per Sequence | Average retries needed per ad load sequence. **(Total Retry Attempts ÷ Total Load Sequences)** |
-| Impression Rate | Percentage of responses that became impressions. **(Impressions ÷ Ad Responses) × 100** |
-| CTR | Percentage of impressions that received a click. **(Clicks ÷ Impressions) × 100** |
-| Pre Load Requests | Number of ad requests initiated by the SDK preloading mechanism. |
-| Pre Load Success Rate | Percentage of preload attempts that cached an ad. **(Cached Ads ÷ Preload Requests) × 100** |
-| Cache Hit Rate | Percentage of ad loads served from cache. **(Cache Hits ÷ Load Ad Requests) × 100** |
-| Cache Expiry Discard Rate | Cached ads discarded because they expired. **(Expired Cached Ads ÷ Cached Ads) × 100** |
-| Completions | Total rewarded ads watched to completion. |
-| Dismissals | Total ads dismissed before completion. |
-| Preload Eligibility Rate | Percentage of preload attempts that entered the preload flow. **(SUM(preload_entered) / (SUM(preload_entered) + SUM(preload_skipped))) × 100** |
-| Preload Fill Rate | Percentage of eligible preload attempts that successfully cached an ad. **(SUM(preload_ad_cached) / SUM(preload_entered)) × 100** |
-| Preload-to-Impression Latency | Average time from ad being cached to its impression. **SUM(preload_impression_latency_sum_ms) / SUM(preload_impression_latency_count)** |
-| Ad Load Time | Average time taken to load an ad after `loadAd()`. **SUM(ad_load_time_sum_ms) / SUM(ad_load_time_count)** |
-| Memory Skip Rate | Percentage of preload attempts skipped due to memory constraints. **(SUM(preload_skipped_memory) / (SUM(preload_entered) + SUM(preload_skipped))) × 100** |
-| Retry Count per LoadAd | Average retry attempts for `loadAd()` requests that entered the retry sequence. **SUM(retry_attempt) / SUM(load_ad_retry_sequence)** |
-| Slot Trigger Frequency per Session | Average `loadAd()` calls made per session. **SUM(load_ad_request) / SUM(session_start)** |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| GAM Responses Served | CA-GMA, CA-NG | Total number of responses returned from Google Ad Manager (GAM) to the application, including both filled and no-fill responses. |
+| GAM Impressions | CA-GMA, CA-NG | Total number of ads served from GAM to the application that were successfully displayed to end users. |
+| GAM Clicks | CA-GMA, CA-NG | Total number of times users clicked on ads served from GAM to the application. |
+| Cpm | CA-GMA, CA-NG | Average revenue earned per 1,000 impressions. **(Revenue / Impressions) × 1000** |
+| Ad Drop & Ad Load Failures | CA-GMA, CA-NG | The number of matched ad requests that did not result in an impression. **max(matchedRequests − impressions, 0)** |
+| Revenue | CA-GMA, CA-NG | Total advertising revenue generated from ads served and displayed to users. |
+| Match rate | CA-GMA, CA-NG | The percentage of total ad requests that successfully resulted in a matched ad response. **(Matched Requests ÷ Total Requests) × 100** |
+| Show Rate | CA-GMA, CA-NG | The percentage of matched ad requests that resulted in an ad impression. **(impressions / matchedRequests) × 100** |
+| CTR | CA-GMA, CA-NG | Click-Through Rate — the percentage of ad impressions that resulted in a click. **(clicks / impressions) × 100** |
+| Total Requests | CA-GMA, CA-NG | Total number of ad requests initiated by the Publisher App through the SDK. |
+| Matched Requests | CA-GMA, CA-NG | Number of requests where the backend successfully found an eligible ad from a demand partner. |
+| Impressions | CA-GMA, CA-NG | Number of times an ad was actually displayed to the user. |
+| Clicks | CA-GMA, CA-NG | Number of times users clicked on an ad. |
+| CPM | CA-GMA, CA-NG | Revenue earned per 1,000 impressions. **(Revenue ÷ Impressions) × 1000** |
+| Revenue | CA-GMA, CA-NG | Total revenue generated from ad impressions. Sum of revenue amounts. |
+| Ad Drop & Ad Load Failure | CA-GMA, CA-NG | Number of ads that failed to load or were discarded before being shown. |
+| Show Rate | CA-GMA, CA-NG | Percentage of requests that resulted in an impression. **(Impressions ÷ Total Requests) × 100** |
+| Match Rate | CA-GMA, CA-NG | Percentage of requests that got matched. **(Matched Requests ÷ Total Requests) × 100** |
+| Ad Requests | CA-GMA, CA-NG | Number of requests sent from SDK to demand partners for ads. |
+| Ad Responses | CA-GMA, CA-NG | Number of responses received from demand partners. |
+| Fill Rate | CA-GMA, CA-NG | Percentage of requests that received an ad response. **(Ad Responses ÷ Ad Requests) × 100** |
+| No Fill Count | CA-GMA, CA-NG | Number of requests where no ad was available from demand partners. **(No Fill Count ÷ Ad Requests) × 100** |
+| Timeouts | CA-GMA, CA-NG | Number of ad requests that did not receive a response within the configured timeout period. |
+| Bid Request Timeout Rate | CA-GMA, CA-NG | Percentage of requests that timed out. **(Timeouts ÷ Ad Requests) × 100** |
+| No-Fill Rate | CA-GMA, CA-NG | Percentage of requests resulting in no fill. **(No Fill Count ÷ Ad Requests) × 100** |
+| Ad Expiry Rate | CA-GMA, CA-NG | Cached ads that expired before being shown. **(Expired Ads ÷ Cached Ads) × 100** |
+| Avg Retries per Sequence | CA-GMA, CA-NG | Average retries needed per ad load sequence. **(Total Retry Attempts ÷ Total Load Sequences)** |
+| Impression Rate | CA-GMA, CA-NG | Percentage of responses that became impressions. **(Impressions ÷ Ad Responses) × 100** |
+| CTR | CA-GMA, CA-NG | Percentage of impressions that received a click. **(Clicks ÷ Impressions) × 100** |
+| Pre Load Requests | CA-GMA, CA-NG | Number of ad requests initiated by the SDK preloading mechanism. |
+| Pre Load Success Rate | CA-GMA, CA-NG | Percentage of preload attempts that cached an ad. **(Cached Ads ÷ Preload Requests) × 100** |
+| Cache Hit Rate | CA-GMA, CA-NG | Percentage of ad loads served from cache. **(Cache Hits ÷ Load Ad Requests) × 100** |
+| Cache Expiry Discard Rate | CA-GMA, CA-NG | Cached ads discarded because they expired. **(Expired Cached Ads ÷ Cached Ads) × 100** |
+| Completions | CA-GMA, CA-NG | Total rewarded ads watched to completion. |
+| Dismissals | CA-GMA, CA-NG | Total ads dismissed before completion. |
+| Preload Eligibility Rate | CA-GMA, CA-NG | Percentage of preload attempts that entered the preload flow. **(SUM(preload_entered) / (SUM(preload_entered) + SUM(preload_skipped))) × 100** |
+| Preload Fill Rate | CA-GMA, CA-NG | Percentage of eligible preload attempts that successfully cached an ad. **(SUM(preload_ad_cached) / SUM(preload_entered)) × 100** |
+| Preload-to-Impression Latency | CA-GMA, CA-NG | Average time from ad being cached to its impression. **SUM(preload_impression_latency_sum_ms) / SUM(preload_impression_latency_count)** |
+| Ad Load Time | CA-GMA, CA-NG | Average time taken to load an ad after `loadAd()`. **SUM(ad_load_time_sum_ms) / SUM(ad_load_time_count)** |
+| Memory Skip Rate | CA-GMA, CA-NG | Percentage of preload attempts skipped due to memory constraints. **(SUM(preload_skipped_memory) / (SUM(preload_entered) + SUM(preload_skipped))) × 100** |
+| Retry Count per LoadAd | CA-GMA, CA-NG | Average retry attempts for `loadAd()` requests that entered the retry sequence. **SUM(retry_attempt) / SUM(load_ad_retry_sequence)** |
+| Slot Trigger Frequency per Session | CA-GMA, CA-NG | Average `loadAd()` calls made per session. **SUM(load_ad_request) / SUM(session_start)** |
 
 ---
 
 ## DTO Sheet Validation
 
-**Products:** Custom Adapter (GMA SDK), Custom Adapter (GMA Next-Gen SDK)
-
-| Keyword | Description |
-| --- | --- |
-| Refresh | Reloads the latest DTO sheet validation status and metrics without starting a new validation process. |
-| Validate Sheet | Starts the validation process by scanning the DTO Google Sheet, validating its data, and updating the validation results. |
-| Status | Indicates the current state of the validation process, such as Completed, In Progress, or Failed. |
-| Requested | The date and time when the sheet validation was requested or initiated. |
-| Started / Completed | The date and time when the validation process started and when it finished. |
-| Duration | The total time taken to complete the validation process, measured from start to completion. |
-| Data Rows Scanned | The total number of rows processed from the DTO Google Sheet during the validation. |
-| Unique DP IDs Found | The total number of unique Demand Partner (DP) IDs identified while scanning the DTO sheet. |
-| Issue Rows | The total number of rows containing validation errors, missing data, or configuration issues detected during the scan. |
-| Placements Covered | The number of unique ad placements successfully validated compared to the total placements expected in the DTO sheet. |
-| Incomplete Coverage | The total number of placements that do not have complete 24-hour coverage or are missing required validation data. |
-| Unreferenced Placements | The total number of placements found in the DTO sheet that are not referenced or mapped in the system configuration. |
-| Invalid Hour Rows | The total number of DTO sheet rows where the Hour value is invalid because it does not meet the required format or range (0–23), the start hour is greater than the end hour, or the value is not a valid hour range. |
-| Invalid Demand-Partner-ID Rows | The total number of DTO sheet rows where the Demand Partner ID is missing, non-numeric, or not a positive integer, making the row invalid for processing. |
-| Unregistered Demand Partners | The total number of valid Demand Partner IDs found in the DTO sheet that do not exist in the Adapter's registered Demand Partner configuration and therefore cannot be mapped during validation. |
-| Placement 24-hour Coverage | Displays the hourly coverage of each placement by combining all valid DTO sheet entries to verify whether the placement is configured for all 24 hours of the day. |
-| Placement | The name of the ad placement whose hourly coverage is being validated against the DTO sheet configuration. |
-| Config ID | The unique identifier of the placement configuration used to associate the placement with its corresponding settings in the system. |
-| DP IDs | The list of Demand Partner IDs (DP IDs) configured for the placement and used to validate its hourly coverage. |
-| Covered Hours | Indicates the hours of the day for which the placement is configured and covered based on valid DTO sheet entries (for example, All 24 hours or a specific range of hours). |
-| Unreferenced Placements | The total number of configured placements that have at least one placement configuration but are not referenced by any valid row in the DTO sheet, indicating they are configured in the system but not mapped in the sheet. |
+| Keyword | Product | Description |
+| --- | --- | --- |
+| Refresh | CA-GMA, CA-NG | Reloads the latest DTO sheet validation status and metrics without starting a new validation process. |
+| Validate Sheet | CA-GMA, CA-NG | Starts the validation process by scanning the DTO Google Sheet, validating its data, and updating the validation results. |
+| Status | CA-GMA, CA-NG | Indicates the current state of the validation process, such as Completed, In Progress, or Failed. |
+| Requested | CA-GMA, CA-NG | The date and time when the sheet validation was requested or initiated. |
+| Started / Completed | CA-GMA, CA-NG | The date and time when the validation process started and when it finished. |
+| Duration | CA-GMA, CA-NG | The total time taken to complete the validation process, measured from start to completion. |
+| Data Rows Scanned | CA-GMA, CA-NG | The total number of rows processed from the DTO Google Sheet during the validation. |
+| Unique DP IDs Found | CA-GMA, CA-NG | The total number of unique Demand Partner (DP) IDs identified while scanning the DTO sheet. |
+| Issue Rows | CA-GMA, CA-NG | The total number of rows containing validation errors, missing data, or configuration issues detected during the scan. |
+| Placements Covered | CA-GMA, CA-NG | The number of unique ad placements successfully validated compared to the total placements expected in the DTO sheet. |
+| Incomplete Coverage | CA-GMA, CA-NG | The total number of placements that do not have complete 24-hour coverage or are missing required validation data. |
+| Unreferenced Placements | CA-GMA, CA-NG | The total number of placements found in the DTO sheet that are not referenced or mapped in the system configuration. |
+| Invalid Hour Rows | CA-GMA, CA-NG | The total number of DTO sheet rows where the Hour value is invalid because it does not meet the required format or range (0–23), the start hour is greater than the end hour, or the value is not a valid hour range. |
+| Invalid Demand-Partner-ID Rows | CA-GMA, CA-NG | The total number of DTO sheet rows where the Demand Partner ID is missing, non-numeric, or not a positive integer, making the row invalid for processing. |
+| Unregistered Demand Partners | CA-GMA, CA-NG | The total number of valid Demand Partner IDs found in the DTO sheet that do not exist in the Adapter's registered Demand Partner configuration and therefore cannot be mapped during validation. |
+| Placement 24-hour Coverage | CA-GMA, CA-NG | Displays the hourly coverage of each placement by combining all valid DTO sheet entries to verify whether the placement is configured for all 24 hours of the day. |
+| Placement | CA-GMA, CA-NG | The name of the ad placement whose hourly coverage is being validated against the DTO sheet configuration. |
+| Config ID | CA-GMA, CA-NG | The unique identifier of the placement configuration used to associate the placement with its corresponding settings in the system. |
+| DP IDs | CA-GMA, CA-NG | The list of Demand Partner IDs (DP IDs) configured for the placement and used to validate its hourly coverage. |
+| Covered Hours | CA-GMA, CA-NG | Indicates the hours of the day for which the placement is configured and covered based on valid DTO sheet entries (for example, All 24 hours or a specific range of hours). |
+| Unreferenced Placements | CA-GMA, CA-NG | The total number of configured placements that have at least one placement configuration but are not referenced by any valid row in the DTO sheet, indicating they are configured in the system but not mapped in the sheet. |

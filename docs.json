@@ -40,8 +40,21 @@
             "title": "Glossary"
           },
           {
-            "page": "changelog",
-            "title": "Change logs"
+            "group": "Changelog",
+            "pages": [
+              {
+                "page": "changelog",
+                "title": "SDK Changelog"
+              },
+              {
+                "page": "release-notes",
+                "title": "Backend Release Notes"
+              }
+            ]
+          },
+          {
+            "page": "package-versions",
+            "title": "Package Versions"
           }
         ]
       }
