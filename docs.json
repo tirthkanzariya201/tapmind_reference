@@ -22,6 +22,12 @@
     "default": "light",
     "strict": true
   },
+  "auth": {
+    "password": {
+      "enabled": true,
+      "hint": "Password-protected docs"
+    }
+  },
   "navbar": {
     "primary": {
       "type": "button",
@@ -43,8 +49,41 @@
             "group": "Changelog",
             "pages": [
               {
-                "page": "changelog",
-                "title": "SDK Changelog"
+                "group": "SDK Changelog",
+                "pages": [
+                  {
+                    "page": "sdk-changelog/native-android-admob",
+                    "title": "Native Android AdMob"
+                  },
+                  {
+                    "page": "sdk-changelog/native-android-gam",
+                    "title": "Native Android GAM"
+                  },
+                  {
+                    "page": "sdk-changelog/native-android-max",
+                    "title": "Native Android MAX"
+                  },
+                  {
+                    "page": "sdk-changelog/native-android-levelplay",
+                    "title": "Native Android LevelPlay"
+                  },
+                  {
+                    "page": "sdk-changelog/native-ios-admob",
+                    "title": "Native iOS AdMob"
+                  },
+                  {
+                    "page": "sdk-changelog/native-ios-gam",
+                    "title": "Native iOS GAM"
+                  },
+                  {
+                    "page": "sdk-changelog/native-ios-max",
+                    "title": "Native iOS MAX"
+                  },
+                  {
+                    "page": "sdk-changelog/native-ios-levelplay",
+                    "title": "Native iOS LevelPlay"
+                  }
+                ]
               },
               {
                 "page": "release-notes",
@@ -64,6 +103,11 @@
     {
       "source": "/",
       "destination": "/glossary",
+      "permanent": false
+    },
+    {
+      "source": "/changelog",
+      "destination": "/sdk-changelog/native-android-admob",
       "permanent": false
     }
   ]
