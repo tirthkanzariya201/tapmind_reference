@@ -18,7 +18,9 @@ export const LatestBadge = ({ platform, mediation, builtOn }) => {
   const version = typeof builtOn === "string" ? builtOn.trim() : "";
   if (!version) return null;
   const current = NATIVE_CURRENT[`${platform}|${mediation}`];
-  if (!current || version !== current) return null;
+  if (!current) return null;
+  const normalize = (v) => v.replace(/^v/i, "");
+  if (normalize(version) !== normalize(current)) return null;
   return (
     <Badge color="green" size="sm" shape="pill">
       Latest
@@ -43,30 +45,30 @@ export const LatestBadge = ({ platform, mediation, builtOn }) => {
 
 | Package Name | Wrapper Version | Native Version (Built On) |
 | --- | --- | --- |
-| Flutter Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
-| Flutter Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
-| Flutter Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
-| Flutter Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
-| Flutter iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
-| Flutter iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
-| Flutter iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
-| Flutter iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
-| Unity Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
-| Unity Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
-| Unity Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
-| Unity Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
-| Unity iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
-| Unity iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
-| Unity iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
-| Unity iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
-| React Native Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
-| React Native Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
-| React Native Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
-| React Native Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
-| React Native iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
-| React Native iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
-| React Native iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
-| React Native iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
+| Flutter Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> | v3.0.1 |  |
+| Flutter Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> | v3.0.0 |  |
+| Flutter Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> | v1.0.3 |  |
+| Flutter Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> | v1.0.3 |  |
+| Flutter iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> | v3.0.1 |  |
+| Flutter iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> | v3.0.0 |  |
+| Flutter iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> | v1.0.3 |  |
+| Flutter iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> | v1.0.3 |  |
+| Unity Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="v3.0.2" /> | v3.0.0 | v3.0.2 |
+| Unity Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="v3.0.2" /> | v3.0.0 | v3.0.2 |
+| Unity Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="v2.1.17" /> | v2.1.11 | v2.1.17 |
+| Unity Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="v2.1.18" /> | v2.1.10 | v2.1.18 |
+| Unity iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="v2.1.13" /> | v3.0.0 | v2.1.13 |
+| Unity iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="v2.1.13" /> | v3.0.0 | v2.1.13 |
+| Unity iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="v2.1.13" /> | v2.1.11 | v2.1.13 |
+| Unity iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="v2.1.11" /> | v2.1.10 | v2.1.11 |
+| React Native Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> | v2.1.4 |  |
+| React Native Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> | v2.1.4 |  |
+| React Native Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> | v2.1.4 |  |
+| React Native Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> | v2.1.4 |  |
+| React Native iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> | v2.1.4 |  |
+| React Native iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> | v2.1.4 |  |
+| React Native iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> | v2.1.4 |  |
+| React Native iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> | v2.1.4 |  |
 | Cocos Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
 | Cocos Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
 | Cocos Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
