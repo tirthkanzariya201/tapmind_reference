@@ -3,52 +3,75 @@ title: Package Versions
 description: Published package versions for TapMind native and wrapper adapters.
 ---
 
+export const NATIVE_CURRENT = {
+  "Android|AdMob": "v3.0.2",
+  "Android|GAM": "v3.0.1",
+  "Android|MAX": "v2.1.17",
+  "Android|LevelPlay": "v2.1.18",
+  "iOS|AdMob": "v2.1.13",
+  "iOS|GAM": "v2.1.13",
+  "iOS|MAX": "v2.1.13",
+  "iOS|LevelPlay": "v2.1.12",
+};
+
+export const LatestBadge = ({ platform, mediation, builtOn }) => {
+  const version = typeof builtOn === "string" ? builtOn.trim() : "";
+  if (!version) return null;
+  const current = NATIVE_CURRENT[`${platform}|${mediation}`];
+  if (!current || version !== current) return null;
+  return (
+    <Badge color="green" size="sm" shape="pill">
+      Latest
+    </Badge>
+  );
+};
+
 ## Native Packages
 
-| Package Name | Version | Status |
-| --- | --- | --- |
-| Native Android AdMob | v3.0.2 | Active |
-| Native Android GAM | v3.0.1 | Active |
-| Native Android MAX | v2.1.17 | Active |
-| Native Android LevelPlay | v2.1.18 | Active |
-| Native iOS AdMob | v2.1.13 | Active |
-| Native iOS GAM | v2.1.13 | Active |
-| Native iOS MAX | v2.1.13 | Active |
-| Native iOS LevelPlay | v2.1.12 | Active |
+| Package Name | Version |
+| --- | --- |
+| Native Android AdMob <Badge color="green" size="sm" shape="pill">Latest</Badge> | v3.0.2 |
+| Native Android GAM <Badge color="green" size="sm" shape="pill">Latest</Badge> | v3.0.1 |
+| Native Android MAX <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.17 |
+| Native Android LevelPlay <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.18 |
+| Native iOS AdMob <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.13 |
+| Native iOS GAM <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.13 |
+| Native iOS MAX <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.13 |
+| Native iOS LevelPlay <Badge color="gray" size="sm" shape="pill">Not Updated</Badge> | v2.1.12 |
 
 ## Wrapper Packages
 
-| Package Name | Wrapper Version | Native Version (Built On) | Status |
-| --- | --- | --- | --- |
-| Flutter Android AdMob |  |  |  |
-| Flutter Android GAM |  |  |  |
-| Flutter Android MAX |  |  |  |
-| Flutter Android LevelPlay |  |  |  |
-| Flutter iOS AdMob |  |  |  |
-| Flutter iOS GAM |  |  |  |
-| Flutter iOS MAX |  |  |  |
-| Flutter iOS LevelPlay |  |  |  |
-| Unity Android AdMob |  |  |  |
-| Unity Android GAM |  |  |  |
-| Unity Android MAX |  |  |  |
-| Unity Android LevelPlay |  |  |  |
-| Unity iOS AdMob |  |  |  |
-| Unity iOS GAM |  |  |  |
-| Unity iOS MAX |  |  |  |
-| Unity iOS LevelPlay |  |  |  |
-| React Native Android AdMob |  |  |  |
-| React Native Android GAM |  |  |  |
-| React Native Android MAX |  |  |  |
-| React Native Android LevelPlay |  |  |  |
-| React Native iOS AdMob |  |  |  |
-| React Native iOS GAM |  |  |  |
-| React Native iOS MAX |  |  |  |
-| React Native iOS LevelPlay |  |  |  |
-| Cocos Android AdMob |  |  |  |
-| Cocos Android GAM |  |  |  |
-| Cocos Android MAX |  |  |  |
-| Cocos Android LevelPlay |  |  |  |
-| Cocos iOS AdMob |  |  |  |
-| Cocos iOS GAM |  |  |  |
-| Cocos iOS MAX |  |  |  |
-| Cocos iOS LevelPlay |  |  |  |
+| Package Name | Wrapper Version | Native Version (Built On) |
+| --- | --- | --- |
+| Flutter Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
+| Flutter Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
+| Flutter Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
+| Flutter Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
+| Flutter iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
+| Flutter iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
+| Flutter iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
+| Flutter iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
+| Unity Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
+| Unity Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
+| Unity Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
+| Unity Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
+| Unity iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
+| Unity iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
+| Unity iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
+| Unity iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
+| React Native Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
+| React Native Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
+| React Native Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
+| React Native Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
+| React Native iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
+| React Native iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
+| React Native iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
+| React Native iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
+| Cocos Android AdMob <LatestBadge platform="Android" mediation="AdMob" builtOn="" /> |  |  |
+| Cocos Android GAM <LatestBadge platform="Android" mediation="GAM" builtOn="" /> |  |  |
+| Cocos Android MAX <LatestBadge platform="Android" mediation="MAX" builtOn="" /> |  |  |
+| Cocos Android LevelPlay <LatestBadge platform="Android" mediation="LevelPlay" builtOn="" /> |  |  |
+| Cocos iOS AdMob <LatestBadge platform="iOS" mediation="AdMob" builtOn="" /> |  |  |
+| Cocos iOS GAM <LatestBadge platform="iOS" mediation="GAM" builtOn="" /> |  |  |
+| Cocos iOS MAX <LatestBadge platform="iOS" mediation="MAX" builtOn="" /> |  |  |
+| Cocos iOS LevelPlay <LatestBadge platform="iOS" mediation="LevelPlay" builtOn="" /> |  |  |
