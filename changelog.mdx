@@ -1,39 +1,17 @@
 ---
-title: Change logs
-description: Release notes for TapMind SDK Integration resources and related updates.
+title: SDK Changelog
+description: Release history for TapMind native SDK packages.
 ---
 
-Placeholder release history for TapMind Resources. Replace these entries with real product notes as you ship.
+<Info title="Legend">
+- <Badge color="green" size="sm" shape="pill">feat</Badge> new feature
+- <Badge color="blue" size="sm" shape="pill">fix</Badge> bug fix
+- <Badge color="red" size="sm" shape="pill">fix!</Badge> breaking fix
+- <Badge color="gray" size="sm" shape="pill">chore</Badge> maintenance / no functional change
+</Info>
 
-## 2026-07-31 — Unreleased
+## v3.0.0 - Native Android AppLovin MAX
 
-### Added
-
-- Draft glossary terms for mediation, placements, and network keys
-- Separate `/glossary` and `/changelog` documentation routes
-
-### Changed
-
-- Root path (`/`) now redirects to the Glossary
-
-### Fixed
-
-- None yet (placeholder)
-
-## 2026-07-15 — Documentation preview
-
-### Added
-
-- Initial Jamdesk site scaffold for TapMind Resources
-- Light appearance default with TapMind primary accent color
-
-### Changed
-
-- Navigation grouped under a single Resources section
-
-## 2026-07-01 — Initial
-
-### Added
-
-- Project bootstrap with `docs.json`, Glossary, and Change logs pages
-- GitHub-connected deploy path documented in the repository README
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Added ad refresh for Banner ads
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Size optimization: request ads from GAM using the backend-configured size instead of the publisher-requested size, and store the publisher-requested size in MongoDB
+- <Badge color="green" size="sm" shape="pill">feat</Badge> Renamed adapter class from `com.tapmind.tech.TapMindMediationAdapterApplovin` to `com.tapmind.mediation.TapMindApplovinAdapter`
