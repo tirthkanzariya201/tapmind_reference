@@ -22,6 +22,14 @@
     "default": "light",
     "strict": true
   },
+  "seo": {
+    "metatags": {
+      "robots": "noindex, nofollow"
+    },
+    "ai": {
+      "llmsTxt": false
+    }
+  },
   "auth": {
     "password": {
       "enabled": true,
