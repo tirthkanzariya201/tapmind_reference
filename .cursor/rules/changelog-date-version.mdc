@@ -1,27 +1,30 @@
 ---
-description: Require date and version for every SDK Changelog and Backend Release Notes entry
+description: Require date (and version when available) for Changelog and Backend Release Notes entries
 globs: changelog.mdx,release-notes.mdx,sdk-changelog/**/*.mdx
 alwaysApply: true
 ---
 
-# Changelog entries require date and version
+# Changelog entries require date (and version when tagged)
 
 When the user asks to add or update **SDK Changelog** (`changelog.mdx`) or **Backend Release Notes** (`release-notes.mdx`):
 
-## Required fields
+## Always required
 
-Every release entry MUST include:
+1. **Date** (e.g. `6 August 2026`)
 
-1. **Version** (e.g. `v3.0.0`)
-2. **Date** (e.g. `6 August 2026`)
+Do **not** invent missing dates. Do **not** apply the update until the date is provided.
 
-Do **not** invent missing dates or versions. Do **not** apply the update until both are provided.
+## Version / release tags
 
-## If either is missing
+- **SDK Changelog:** every entry MUST include **version** and **date**. Ask if either is missing.
+- **Backend Release Notes (historical / existing style):** date-only headings are allowed (e.g. `## Release Notes - 6 August 2026`). Do **not** invent version tags for these.
+- **Backend Release Notes (going forward):** when the user starts shipping tagged releases, require **version** as well. If they share an update without a version, ask once; if they say to skip tags for that entry, use date-only.
 
-Stop and ask the user for the missing field(s) before editing files. Example:
+## If date is missing
 
-> I need the **release date** and **version** before adding this entry. Please share both.
+Stop and ask before editing files. Example:
+
+> I need the **release date** before adding this entry. Please share it (and the **version** if this is a tagged release).
 
 ## Heading format
 
@@ -33,15 +36,17 @@ SDK Changelog:
 
 Example: `## v3.0.0 - 6 August 2026 - Native Android AppLovin MAX`
 
-Backend Release Notes:
+Backend Release Notes (date-only / historical):
+
+```md
+## Release Notes - {date}
+```
+
+Backend Release Notes (tagged, when provided):
 
 ```md
 ## Release Notes - {date} (v{version})
 ```
-
-Example: `## Release Notes - 6 August 2026 (v1.4.3)`
-
-If Backend version is unknown, still require date; ask for version before publishing that entry.
 
 ## Style
 
