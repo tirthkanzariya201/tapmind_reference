@@ -32,8 +32,7 @@
   },
   "auth": {
     "password": {
-      "enabled": true,
-      "hint": "Password-protected docs"
+      "enabled": false
     }
   },
   "navbar": {
