@@ -56,8 +56,22 @@
             "group": "Changelog",
             "pages": [
               {
-                "page": "changelog",
-                "title": "SDK Changelog"
+                "group": "SDK Changelog",
+                "expanded": true,
+                "pages": [
+                  {
+                    "page": "sdk-changelog/custom-adapter-gma-sdk",
+                    "title": "Custom Adapter GMA SDK"
+                  },
+                  {
+                    "page": "sdk-changelog/custom-adapter-gma-next-gen-sdk",
+                    "title": "Custom Adapter GMA Next-Gen SDK"
+                  },
+                  {
+                    "page": "sdk-changelog/orchestration-sdk",
+                    "title": "Orchestration SDK"
+                  }
+                ]
               },
               {
                 "page": "release-notes",
@@ -68,6 +82,14 @@
           {
             "page": "package-versions",
             "title": "Package Versions"
+          },
+          {
+            "page": "feature-support-by-package",
+            "title": "Feature Support by Package"
+          },
+          {
+            "page": "package-support-by-feature",
+            "title": "Package Support by Feature"
           }
         ]
       }
@@ -80,43 +102,48 @@
       "permanent": false
     },
     {
+      "source": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
+      "permanent": true
+    },
+    {
       "source": "/sdk-changelog/native-android-admob",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-android-gam",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-android-max",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-android-levelplay",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-ios-admob",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-ios-gam",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-ios-max",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     },
     {
       "source": "/sdk-changelog/native-ios-levelplay",
-      "destination": "/changelog",
+      "destination": "/sdk-changelog/custom-adapter-gma-sdk",
       "permanent": true
     }
   ]

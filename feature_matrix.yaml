@@ -1,0 +1,505 @@
+meta:
+  package_versions_source: package_versions.yaml
+  seed_source: GMA and Next-Gen release spreadsheets (Aug 2026)
+  sync_note: Page generation must join product id + package name against package_versions.yaml
+  products:
+    - id: ca-gma
+      name: Custom Adapter GMA SDK
+      package_count: 36
+    - id: ca-ng
+      name: Custom Adapter GMA Next-Gen SDK
+      package_count: 6
+
+features:
+  crash_fix_threadlocal:
+    display_name: "Android API 25 crash fix"
+    description: "Fixed a crash on Android API 25 and below caused by use of ThreadLocal.withInitial(), which requires API 26+. Replaced with a method supported on older API levels."
+    scope: platform-level
+    applies_to: "Android packages only, all mediations. Not applicable to any iOS package."
+  discard_timeout_ad:
+    display_name: "Discard late ad after timeout no-fill"
+    description: "Each placement has a timeout starting when the adapter receives a request. If no ad is served within that timeout, the adapter sends a no-fill to mediation. This fix discards any ad that the underlying GMA (Google Mobile Ads, the demand source, distinct from GAM the mediation platform) demand returns after that no-fill was already sent, since it was previously not being discarded."
+    scope: demand-level
+    applies_to: "Every package, all frameworks, all platforms, all mediations, since GMA sits underneath as demand regardless of which mediation platform is on top."
+  banner_ad_refresh:
+    display_name: "Banner ad refresh"
+    description: "Refreshes a banner ad using the same demand tags without a new backend call. Backend-configurable: enable/disable refresh, refresh interval, retry attempts, retry timeout."
+    scope: sdk-level
+    applies_to: "Packages built on a core SDK version that includes this feature."
+  banner_ad_size_optimization:
+    display_name: "Banner ad size optimization"
+    description: "Previously, mediation would often request an incorrect size, or all sizes, relative to the actual ad container, causing ads that did not fit or overflowed. Fixed by ignoring the mediation-requested size and instead using a backend-configurable ad size."
+    scope: sdk-level
+    applies_to: "Packages built on a core SDK version that includes this feature."
+  updated_classnames:
+    display_name: "Standardized class names"
+    description: "Standardization of adapter class names across mediations."
+    scope: adapter-level
+    applies_to: "Each adapter individually, as each is rebuilt."
+
+products:
+  ca-gma:
+    packages:
+      - name: "Native Android AdMob"
+        framework: Native
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: shipped, confirmed: true, shipped_in_version: "v3.0.4", note: "" }
+          discard_timeout_ad: { status: shipped, confirmed: true, shipped_in_version: "v3.0.4", note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, shipped_in_version: "v3.0.4", note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, shipped_in_version: "v3.0.4", note: "" }
+          updated_classnames: { status: shipped, confirmed: true, shipped_in_version: "v3.0.4", note: "" }
+
+      - name: "Native Android GAM"
+        framework: Native
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native Android AppLovin MAX"
+        framework: Native
+        platform: Android
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native Android LevelPlay"
+        framework: Native
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native iOS AdMob"
+        framework: Native
+        platform: iOS
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native iOS GAM"
+        framework: Native
+        platform: iOS
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native iOS AppLovin MAX"
+        framework: Native
+        platform: iOS
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native iOS LevelPlay"
+        framework: Native
+        platform: iOS
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Flutter Android AdMob"
+        framework: Flutter
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Flutter Android GAM"
+        framework: Flutter
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Flutter Android AppLovin MAX"
+        framework: Flutter
+        platform: Android
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Flutter Android LevelPlay"
+        framework: Flutter
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Flutter iOS AdMob"
+        framework: Flutter
+        platform: iOS
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Flutter iOS GAM"
+        framework: Flutter
+        platform: iOS
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Flutter iOS AppLovin MAX"
+        framework: Flutter
+        platform: iOS
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Flutter iOS LevelPlay"
+        framework: Flutter
+        platform: iOS
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity Android AdMob"
+        framework: Unity
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity Android GAM"
+        framework: Unity
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity Android AppLovin MAX"
+        framework: Unity
+        platform: Android
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity Android LevelPlay"
+        framework: Unity
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Unity iOS AdMob"
+        framework: Unity
+        platform: iOS
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity iOS GAM"
+        framework: Unity
+        platform: iOS
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity iOS AppLovin MAX"
+        framework: Unity
+        platform: iOS
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Unity iOS LevelPlay"
+        framework: Unity
+        platform: iOS
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native Android AdMob"
+        framework: "React Native"
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native Android GAM"
+        framework: "React Native"
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native Android AppLovin MAX"
+        framework: "React Native"
+        platform: Android
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "React Native Android LevelPlay"
+        framework: "React Native"
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native iOS AdMob"
+        framework: "React Native"
+        platform: iOS
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native iOS GAM"
+        framework: "React Native"
+        platform: iOS
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "React Native iOS AppLovin MAX"
+        framework: "React Native"
+        platform: iOS
+        mediation: "AppLovin MAX"
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "React Native iOS LevelPlay"
+        framework: "React Native"
+        platform: iOS
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Cocos Android AdMob"
+        framework: Cocos
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Cocos Android GAM"
+        framework: Cocos
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Cocos iOS AdMob"
+        framework: Cocos
+        platform: iOS
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+      - name: "Cocos iOS GAM"
+        framework: Cocos
+        platform: iOS
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_applicable, confirmed: true, note: "Platform-level feature, Android only." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: not_built, confirmed: false, note: "" }
+
+  ca-ng:
+    packages:
+      - name: "Native Android AdMob"
+        framework: Native
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native Android GAM"
+        framework: Native
+        platform: Android
+        mediation: GAM
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: not_built, confirmed: false, note: "" }
+          banner_ad_size_optimization: { status: not_built, confirmed: false, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Native Android LevelPlay"
+        framework: Native
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Flutter Android AdMob"
+        framework: Flutter
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Unity Android AdMob"
+        framework: Unity
+        platform: Android
+        mediation: AdMob
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }
+
+      - name: "Unity Android LevelPlay"
+        framework: Unity
+        platform: Android
+        mediation: LevelPlay
+        features:
+          crash_fix_threadlocal: { status: not_built, confirmed: false, note: "Pending release." }
+          discard_timeout_ad: { status: not_built, confirmed: false, note: "" }
+          banner_ad_refresh: { status: shipped, confirmed: true, note: "" }
+          banner_ad_size_optimization: { status: shipped, confirmed: true, note: "" }
+          updated_classnames: { status: shipped, confirmed: true, note: "" }

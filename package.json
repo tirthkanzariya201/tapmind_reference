@@ -4,6 +4,9 @@
   "private": true,
   "description": "TapMind Resources — Glossary and Change logs (Jamdesk)",
   "scripts": {
+    "generate:matrix": "node scripts/generate-matrix-data.mjs",
+    "predev": "npm run generate:matrix",
+    "prevalidate": "npm run generate:matrix",
     "dev": "jamdesk dev --port 3457",
     "validate": "jamdesk validate",
     "deploy": "jamdesk deploy"
@@ -12,6 +15,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "jamdesk": "latest"
+    "jamdesk": "latest",
+    "yaml": "^2.8.1"
   }
 }

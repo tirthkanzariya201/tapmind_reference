@@ -318,6 +318,73 @@ article table.registry-table td:nth-child(4) code,
   cursor: text !important;
 }
 
+/* SDK Changelog: date left, version + details right */
+.changelog-entry {
+  display: grid !important;
+  grid-template-columns: 10.75rem minmax(0, 1fr) !important;
+  column-gap: 1.75rem !important;
+  align-items: start !important;
+  margin: 2.25rem 0 0 !important;
+}
+
+.changelog-date {
+  margin: 0.45rem 0 0 !important;
+  padding: 0 !important;
+  color: var(--color-text-muted, #64748b) !important;
+  font-size: 0.9375rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  white-space: nowrap !important;
+}
+
+.changelog-body {
+  min-width: 0 !important;
+}
+
+.changelog-body > :first-child,
+.changelog-body h2:first-child {
+  margin-top: 0 !important;
+}
+
+.changelog-entry + .changelog-entry {
+  margin-top: 2.75rem !important;
+}
+
+@media (max-width: 720px) {
+  .changelog-entry {
+    grid-template-columns: 1fr !important;
+    row-gap: 0.15rem !important;
+  }
+}
+
+/* Feature matrix pages */
+.matrix-filter-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted, #64748b);
+}
+
+.matrix-filter-select {
+  width: 100%;
+}
+
+.matrix-product-label {
+  letter-spacing: 0.06em;
+}
+
+.matrix-feature-table th,
+.matrix-feature-table td {
+  vertical-align: top;
+}
+
+.matrix-product-section + .matrix-product-section {
+  margin-top: 1rem;
+}
+
 /* Safety rule for any other tables with long inline code tokens */
 #content-area table td code,
 article table td code,

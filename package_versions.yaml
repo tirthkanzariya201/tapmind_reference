@@ -1,0 +1,296 @@
+# Package Versions (source of truth)
+# Page generation should read this file, not hand-maintain package-versions.mdx.
+
+products:
+  ca-gma:
+    name: "Custom Adapter GMA SDK"
+    native:
+      - name: "Native Android AdMob"
+        framework: Native
+        platform: Android
+        mediation: AdMob
+        package_version: "v3.0.4"
+        latest: true
+      - name: "Native Android GAM"
+        framework: Native
+        platform: Android
+        mediation: GAM
+        package_version: "v3.0.1"
+        latest: true
+      - name: "Native Android AppLovin MAX"
+        framework: Native
+        platform: Android
+        mediation: "AppLovin MAX"
+        package_version: "v3.0.0"
+        latest: true
+      - name: "Native Android LevelPlay"
+        framework: Native
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v3.0.2"
+        latest: true
+      - name: "Native iOS AdMob"
+        framework: Native
+        platform: iOS
+        mediation: AdMob
+        package_version: "v3.0.1"
+        latest: true
+      - name: "Native iOS GAM"
+        framework: Native
+        platform: iOS
+        mediation: GAM
+        package_version: "v3.0.0"
+        latest: true
+      - name: "Native iOS AppLovin MAX"
+        framework: Native
+        platform: iOS
+        mediation: "AppLovin MAX"
+        package_version: "v3.0.2"
+        latest: true
+      - name: "Native iOS LevelPlay"
+        framework: Native
+        platform: iOS
+        mediation: LevelPlay
+        package_version: "v2.1.13"
+        latest: false
+    wrappers:
+      - name: "Flutter Android AdMob"
+        framework: Flutter
+        platform: Android
+        mediation: AdMob
+        package_version: "v3.0.1"
+        native_built_on: "v3.0.2"
+        latest: true
+      - name: "Flutter Android GAM"
+        framework: Flutter
+        platform: Android
+        mediation: GAM
+        package_version: "v3.0.0"
+        native_built_on: "v3.0.1"
+        latest: true
+      - name: "Flutter Android AppLovin MAX"
+        framework: Flutter
+        platform: Android
+        mediation: "AppLovin MAX"
+        package_version: "v1.0.3"
+        native_built_on: "v2.1.16"
+        latest: false
+      - name: "Flutter Android LevelPlay"
+        framework: Flutter
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v1.0.3"
+        native_built_on: "v2.1.16"
+        latest: false
+      - name: "Flutter iOS AdMob"
+        framework: Flutter
+        platform: iOS
+        mediation: AdMob
+        package_version: "v3.0.1"
+        native_built_on: "v2.1.13"
+        latest: false
+      - name: "Flutter iOS GAM"
+        framework: Flutter
+        platform: iOS
+        mediation: GAM
+        package_version: "v3.0.1"
+        native_built_on: "v3.0.0"
+        latest: true
+      - name: "Flutter iOS AppLovin MAX"
+        framework: Flutter
+        platform: iOS
+        mediation: "AppLovin MAX"
+        package_version: "v3.0.2"
+        native_built_on: "v3.0.1"
+        latest: true
+      - name: "Flutter iOS LevelPlay"
+        framework: Flutter
+        platform: iOS
+        mediation: LevelPlay
+        package_version: "v1.0.3"
+        native_built_on: "v2.1.12"
+        latest: false
+      - name: "Unity Android AdMob"
+        framework: Unity
+        platform: Android
+        mediation: AdMob
+        package_version: "v3.0.0"
+        native_built_on: "v3.0.2"
+        latest: true
+      - name: "Unity Android GAM"
+        framework: Unity
+        platform: Android
+        mediation: GAM
+        package_version: "v3.0.0"
+        native_built_on: "v3.0.2"
+        latest: false
+      - name: "Unity Android AppLovin MAX"
+        framework: Unity
+        platform: Android
+        mediation: "AppLovin MAX"
+        package_version: "v2.1.11"
+        native_built_on: "v2.1.17"
+        latest: false
+      - name: "Unity Android LevelPlay"
+        framework: Unity
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v2.1.10"
+        native_built_on: "v2.1.18"
+        latest: true
+      - name: "Unity iOS AdMob"
+        framework: Unity
+        platform: iOS
+        mediation: AdMob
+        package_version: "v3.0.0"
+        native_built_on: "v2.1.13"
+        latest: true
+      - name: "Unity iOS GAM"
+        framework: Unity
+        platform: iOS
+        mediation: GAM
+        package_version: "v3.0.0"
+        native_built_on: "v2.1.13"
+        latest: true
+      - name: "Unity iOS AppLovin MAX"
+        framework: Unity
+        platform: iOS
+        mediation: "AppLovin MAX"
+        package_version: "v2.1.11"
+        native_built_on: "v2.1.13"
+        latest: true
+      - name: "Unity iOS LevelPlay"
+        framework: Unity
+        platform: iOS
+        mediation: LevelPlay
+        package_version: "v2.1.10"
+        native_built_on: "v2.1.11"
+        latest: false
+      - name: "React Native Android AdMob"
+        framework: "React Native"
+        platform: Android
+        mediation: AdMob
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "React Native Android GAM"
+        framework: "React Native"
+        platform: Android
+        mediation: GAM
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "React Native Android AppLovin MAX"
+        framework: "React Native"
+        platform: Android
+        mediation: "AppLovin MAX"
+        package_version: "v3.0.2"
+        native_built_on: "v3.0.0"
+        latest: true
+      - name: "React Native Android LevelPlay"
+        framework: "React Native"
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "React Native iOS AdMob"
+        framework: "React Native"
+        platform: iOS
+        mediation: AdMob
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "React Native iOS GAM"
+        framework: "React Native"
+        platform: iOS
+        mediation: GAM
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "React Native iOS AppLovin MAX"
+        framework: "React Native"
+        platform: iOS
+        mediation: "AppLovin MAX"
+        package_version: "v3.0.2"
+        native_built_on: "v3.0.2"
+        latest: true
+      - name: "React Native iOS LevelPlay"
+        framework: "React Native"
+        platform: iOS
+        mediation: LevelPlay
+        package_version: "v2.1.4"
+        native_built_on: ""
+        latest: false
+      - name: "Cocos Android AdMob"
+        framework: Cocos
+        platform: Android
+        mediation: AdMob
+        package_version: ""
+        native_built_on: ""
+        latest: false
+      - name: "Cocos Android GAM"
+        framework: Cocos
+        platform: Android
+        mediation: GAM
+        package_version: ""
+        native_built_on: ""
+        latest: false
+      - name: "Cocos iOS AdMob"
+        framework: Cocos
+        platform: iOS
+        mediation: AdMob
+        package_version: ""
+        native_built_on: ""
+        latest: false
+      - name: "Cocos iOS GAM"
+        framework: Cocos
+        platform: iOS
+        mediation: GAM
+        package_version: ""
+        native_built_on: ""
+        latest: false
+
+  ca-ng:
+    name: "Custom Adapter GMA Next-Gen SDK"
+    native:
+      - name: "Native Android AdMob"
+        framework: Native
+        platform: Android
+        mediation: AdMob
+        package_version: "v2.0.2"
+        latest: true
+      - name: "Native Android GAM"
+        framework: Native
+        platform: Android
+        mediation: GAM
+        package_version: "v2.0.1"
+        latest: true
+      - name: "Native Android LevelPlay"
+        framework: Native
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v2.0.0"
+        latest: true
+    wrappers:
+      - name: "Flutter Android AdMob"
+        framework: Flutter
+        platform: Android
+        mediation: AdMob
+        package_version: "v1.0.1"
+        native_built_on: "v2.0.2"
+        latest: true
+      - name: "Unity Android AdMob"
+        framework: Unity
+        platform: Android
+        mediation: AdMob
+        package_version: "v2.0.0"
+        native_built_on: "v2.0.2"
+        latest: true
+      - name: "Unity Android LevelPlay"
+        framework: Unity
+        platform: Android
+        mediation: LevelPlay
+        package_version: "v2.0.0"
+        native_built_on: "v2.0.2"
+        latest: true

@@ -1,0 +1,83 @@
+---
+title: Custom Adapter GMA SDK
+description: Release history for TapMind Custom Adapter (GMA SDK).
+---
+
+Get the latest SDK versions from [Package Versions](/package-versions).
+
+<Info title="Legend">
+- **Improvements** - new feature
+- **Fixed** - bug fix
+- **Breaking** - breaking change
+- **Maintenance** - no functional change
+</Info>
+
+<div className="changelog-entry">
+  <p className="changelog-date">14 August 2026</p>
+  <div className="changelog-body">
+
+## Version 3.0.2
+
+AppLovin MAX iOS - Flutter
+
+Package: `tapmind_ads_applovin_flutter: ^3.0.2`
+
+Native SDK Version: `v3.0.1`
+
+**Improvements**
+
+- Send the mediation requested height and width to the backend.
+- Added Product Key parameter to identify the product.
+- Renamed adapter class from `com.tapmind.tech.TapMindMediationAdapterApplovin` to `com.tapmind.mediation.TapMindApplovinAdapter`.
+- Added placement timeout to send no-fill to mediation after the configured backend timeout.
+- Added ad refresh for Banner ads.
+- Added logs at key points in the ad request and response flow for improved debugging and monitoring.
+- Added Product Key parameter to the Impression APIs to identify the product.
+
+**Fixed**
+
+- Fixed support for multiple ad scenarios with proper thread management.
+- Size optimization: use the platform configured size to fetch ad from GAM instead of mediation requested size.
+
+</div>
+</div>
+
+<div className="changelog-entry">
+  <p className="changelog-date">14 August 2026</p>
+  <div className="changelog-body">
+
+## Version 3.0.1
+
+Native iOS AppLovin MAX
+
+**Improvements**
+
+- Added Product Key parameter to the Impression APIs.
+
+</div>
+</div>
+
+<div className="changelog-entry">
+  <p className="changelog-date">13 August 2026</p>
+  <div className="changelog-body">
+
+## Version 3.0.0
+
+Native iOS AppLovin MAX
+
+**Improvements**
+
+- Send the mediation requested height and width to the backend.
+- Added Product Key parameter to identify the product.
+- Renamed adapter class from `com.tapmind.tech.TapMindMediationAdapterApplovin` to `com.tapmind.mediation.TapMindApplovinAdapter`.
+- Added placement timeout to send no-fill to mediation after the configured backend timeout.
+- Added ad refresh for Banner ads.
+- Added logs at key points in the ad request and response flow for improved debugging and monitoring.
+
+**Fixed**
+
+- Fixed support for multiple ad scenarios with proper thread management.
+- Size optimization: use the platform configured size to fetch ad from GAM instead of mediation requested size.
+
+</div>
+</div>

@@ -1,0 +1,19 @@
+---
+title: Feature Support by Package
+description: Filter TapMind packages by product, framework, platform, and mediation to see feature support status and current package version.
+---
+
+import { FeatureSupportByPackage } from '/snippets/FeatureSupportByPackage';
+
+Filter packages by **Product**, **Framework**, **Platform**, and **Mediation**. Each result card is labeled with its product name so Custom Adapter GMA SDK and Custom Adapter GMA Next-Gen SDK packages are never merged.
+
+<Info title="Legend">
+- <Badge color="green" size="sm" shape="pill">Shipped</Badge> confirmed shipped
+- <Badge color="gray" size="sm" shape="pill">Shipped, unconfirmed</Badge> shipped but not yet verified
+- <Badge color="gray" size="sm" shape="pill">Not applicable</Badge> feature does not apply to this package
+- <Badge color="red" size="sm" shape="pill">Not yet built</Badge> not shipped in this package yet
+</Info>
+
+<FeatureSupportByPackage />
+
+Package versions are sourced from [Package Versions](/package-versions) via `package_versions.yaml`.

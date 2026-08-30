@@ -1,12 +1,12 @@
 ---
 description: Require date (and version when available) for Changelog and Backend Release Notes entries
-globs: changelog.mdx,release-notes.mdx,sdk-changelog/**/*.mdx
+globs: release-notes.mdx,sdk-changelog/**/*.mdx
 alwaysApply: true
 ---
 
 # Changelog entries require date (and version when tagged)
 
-When the user asks to add or update **SDK Changelog** (`changelog.mdx`) or **Backend Release Notes** (`release-notes.mdx`):
+When the user asks to add or update **SDK Changelog** (`sdk-changelog/*.mdx`) or **Backend Release Notes** (`release-notes.mdx`):
 
 ## Always required
 
@@ -28,13 +28,45 @@ Stop and ask before editing files. Example:
 
 ## Heading format
 
-SDK Changelog:
+SDK Changelog uses a two-column entry: date on the left, version and details on the right.
 
-```md
-## v{version} - {date} - {package or product name}
+```mdx
+<div className="changelog-entry">
+  <p className="changelog-date">{date}</p>
+  <div className="changelog-body">
+
+## Version {version}
+
+{package name}
+
+**Improvements** / **Fixed** / **Breaking** / **Maintenance**
+
+- change
+
+  </div>
+</div>
 ```
 
-Example: `## v3.0.0 - 6 August 2026 - Native Android AppLovin MAX`
+Example:
+
+```mdx
+<div className="changelog-entry">
+  <p className="changelog-date">6 August 2026</p>
+  <div className="changelog-body">
+
+## Version 3.0.0
+
+Native Android AppLovin MAX
+
+**Improvements**
+
+- Added ad refresh for Banner ads
+
+  </div>
+</div>
+```
+
+Use `## Version {version}` inside `changelog-body` so the right-hand On This Page list shows versions. Never put the date in the H2.
 
 Backend Release Notes (date-only / historical):
 
@@ -51,5 +83,6 @@ Backend Release Notes (tagged, when provided):
 ## Style
 
 - Prefer hyphen `-` over em dash `—`
-- Keep Legend and Badge styling consistent with existing pages
+- Keep Legend styling consistent with existing SDK Changelog pages
+- Prefer **Improvements** / **Fixed** / **Breaking** / **Maintenance** section headings over inline feat/fix badges on SDK Changelog
 - Newest entries first

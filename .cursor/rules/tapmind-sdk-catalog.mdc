@@ -1,0 +1,57 @@
+---
+description: TapMind mobile SDK product model - SDK vs adapter, three products, package naming, release flow
+alwaysApply: true
+---
+
+# TapMind SDK catalog (mobile)
+
+Use this when editing changelog, package versions, glossary, or integration docs.
+
+## SDK vs adapter
+
+| Layer | Role |
+| --- | --- |
+| **SDK** (`TapMindSdk`) | TapMind core: server config, load/show ads (GMA/GAM under the hood), tracking, privacy, timeouts, fallback |
+| **Adapter** (`customadapter-admob`, `customadapter-gam`, `customadapter-applovin`, `customadapter-ironsource`, etc.) | Mediation bridge: receives platform load request, calls TapMind SDK, returns loaded/failed/clicked to that platform |
+
+Publishers integrate via mediation (AdMob, GAM, AppLovin MAX, LevelPlay), not TapMind directly. **SDK = logic. Adapter = plug for each mediation partner.**
+
+## Three mobile products
+
+| Product | Demand | Integration |
+| --- | --- | --- |
+| **Custom Adapter GMA SDK** (CA-GMA) | Current GMA | Plugs into mediations via adapters |
+| **Custom Adapter GMA Next-Gen SDK** (CA-NG) | Next-Gen GMA | Same adapter model, different GMA generation |
+| **Orchestration SDK** | GMA | Standalone; no mediation adapters (defer unless asked) |
+
+GMA vs Next-Gen: same mediation adapter pattern; only the GMA demand generation differs.
+
+## What a "package" is
+
+**Package** = **Framework/Native** + **Platform (Android/iOS)** + **Mediation (AdMob, GAM, AppLovin MAX, LevelPlay)**
+
+Examples: Native Android AdMob, Flutter iOS GAM, Unity Android LevelPlay.
+
+Supported frameworks: Native Android, Native iOS, Flutter, Unity, React Native, Cocos (each Android/iOS where applicable).
+
+## Release and build order
+
+### Native (Android / iOS)
+
+1. New features land in the **platform SDK** first (separate SDK per platform: Native Android SDK, Native iOS SDK).
+2. **Adapters** are add-ons on the same SDK - e.g. Native Android GAM after Native Android AdMob needs **adapter-only** work; SDK logic unchanged.
+3. Same pattern on iOS.
+
+### Wrapper frameworks (Flutter, Unity, RN, Cocos)
+
+- Each wrapper bundles **Native adapter + Native SDK** for that platform/mediation.
+- Typical flow: ship on Native Android/iOS first, then update wrapper packages.
+- Example: feature in Native Android AdMob, publisher needs Flutter Android GAM → build **Native Android GAM** (SDK unchanged) → that bundle ships inside **Flutter Android GAM**.
+
+## Docs site mapping
+
+- **SDK Changelog** (`sdk-changelog/`): per product (CA-GMA, CA-NG; Orchestration when relevant).
+- **Package Versions** (`package-versions.mdx`): CA-GMA and CA-NG only (Orchestration has no mediation packages).
+- **Glossary**: CA-GMA / CA-NG abbreviations; Orchestration terms deferred.
+
+When adding entries, respect native-first release order and wrapper "built on" native version relationships.
