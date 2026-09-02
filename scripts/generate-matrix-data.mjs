@@ -94,8 +94,8 @@ function main() {
 export const MATRIX_DATA = ${JSON.stringify(payload, null, 2)} as const;
 `;
 
-  fs.writeFileSync(path.join(outDir, "matrix-data.ts"), tsContent);
-  console.log(`Generated snippets/matrix-data.ts (${products.reduce((n, p) => n + p.packages.length, 0)} packages)`);
+  fs.writeFileSync(path.join(outDir, "MATRIX_DATA.tsx"), tsContent);
+  console.log(`Generated snippets/MATRIX_DATA.tsx (${products.reduce((n, p) => n + p.packages.length, 0)} packages)`);
 }
 
 main();

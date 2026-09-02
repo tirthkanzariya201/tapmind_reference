@@ -1,23 +1,13 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { MATRIX_DATA } from './matrix-data';
+import { useMemo } from 'react';
+import MATRIX_DATA from './MATRIX_DATA';
 
-export type MatrixProduct = (typeof MATRIX_DATA.products)[number];
-export type MatrixPackage = MatrixProduct['packages'][number];
-export type FeatureKey = (typeof MATRIX_DATA.feature_order)[number];
+type MatrixPackage = (typeof MATRIX_DATA.products)[number]['packages'][number];
 
-export const ALL = 'All';
+const ALL = 'All';
 
-export function useMatrixData() {
-  return MATRIX_DATA;
-}
-
-export function uniqueValues(packages: MatrixPackage[], field: keyof MatrixPackage) {
-  return [...new Set(packages.map((pkg) => String(pkg[field])))].sort();
-}
-
-export function filterPackages(
+function filterPackages(
   packages: MatrixPackage[],
   filters: { product: string; framework: string; platform: string; mediation: string }
 ) {
@@ -30,7 +20,11 @@ export function filterPackages(
   });
 }
 
-export function StatusBadge({ status }: { status: string }) {
+function uniqueValues(packages: MatrixPackage[], field: keyof MatrixPackage) {
+  return [...new Set(packages.map((pkg) => String(pkg[field])))].sort();
+}
+
+function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
     shipped: 'bg-emerald-100 text-emerald-800 border-emerald-200',
     shipped_unconfirmed: 'bg-amber-100 text-amber-900 border-amber-200',
@@ -54,7 +48,7 @@ export function StatusBadge({ status }: { status: string }) {
   );
 }
 
-export function FilterBar({
+function FilterBar({
   filters,
   setFilters,
   packages,
@@ -167,7 +161,7 @@ export function FilterBar({
   );
 }
 
-export function PackageCard({ pkg }: { pkg: MatrixPackage }) {
+function PackageCard({ pkg }: { pkg: MatrixPackage }) {
   return (
     <section className="matrix-package-card rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
       <header className="matrix-package-header mb-4 border-b border-slate-100 pb-4">
@@ -218,9 +212,15 @@ export function PackageCard({ pkg }: { pkg: MatrixPackage }) {
   );
 }
 
-export function useAllPackages() {
-  return useMemo(
-    () => MATRIX_DATA.products.flatMap((product) => product.packages),
-    []
-  );
+function useAllPackages() {
+  return useMemo(() => MATRIX_DATA.products.flatMap((product) => product.packages), []);
 }
+
+export const matrixInternals = {
+  ALL,
+  MATRIX_DATA,
+  filterPackages,
+  FilterBar,
+  PackageCard,
+  useAllPackages,
+};

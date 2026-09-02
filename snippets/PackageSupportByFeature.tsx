@@ -1,8 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { ALL, FilterBar, filterPackages, useAllPackages } from './matrix-shared';
-import { MATRIX_DATA } from './matrix-data';
+import matrixInternals from './matrixInternals';
 
 const SHIPPED = 'shipped';
 const UNCONFIRMED = 'shipped_unconfirmed';
@@ -15,7 +14,7 @@ function PackageList({
   featureKey,
 }: {
   title: string;
-  items: typeof MATRIX_DATA.products[number]['packages'];
+  items: (typeof matrixInternals.MATRIX_DATA.products)[number]['packages'];
   featureKey: string;
 }) {
   if (items.length === 0) return null;
@@ -49,9 +48,9 @@ function ProductFeatureSection({
   featureKey,
   scopedPackages,
 }: {
-  product: (typeof MATRIX_DATA.products)[number];
+  product: (typeof matrixInternals.MATRIX_DATA.products)[number];
   featureKey: string;
-  scopedPackages: typeof MATRIX_DATA.products[number]['packages'];
+  scopedPackages: (typeof matrixInternals.MATRIX_DATA.products)[number]['packages'];
 }) {
   const buckets = useMemo(() => {
     const shipped: typeof scopedPackages = [];
@@ -104,6 +103,7 @@ function ProductFeatureSection({
 }
 
 export function PackageSupportByFeature() {
+  const { ALL, MATRIX_DATA, FilterBar, filterPackages, useAllPackages } = matrixInternals;
   const allPackages = useAllPackages();
   const [featureKey, setFeatureKey] = useState(MATRIX_DATA.feature_order[0]);
   const [filters, setFilters] = useState({
@@ -114,14 +114,14 @@ export function PackageSupportByFeature() {
   });
 
   const feature = MATRIX_DATA.feature_definitions[featureKey as keyof typeof MATRIX_DATA.feature_definitions];
-  const matched = useMemo(() => filterPackages(allPackages, filters), [allPackages, filters]);
+  const matched = useMemo(() => filterPackages(allPackages, filters), [allPackages, filters, filterPackages]);
 
   const visibleProducts = useMemo(() => {
     if (filters.product !== ALL) {
       return MATRIX_DATA.products.filter((product) => product.id === filters.product);
     }
     return MATRIX_DATA.products;
-  }, [filters.product]);
+  }, [filters.product, ALL, MATRIX_DATA.products]);
 
   return (
     <div className="matrix-page space-y-6">

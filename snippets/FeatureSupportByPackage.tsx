@@ -1,15 +1,10 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import {
-  ALL,
-  FilterBar,
-  PackageCard,
-  filterPackages,
-  useAllPackages,
-} from './matrix-shared';
+import matrixInternals from './matrixInternals';
 
 export function FeatureSupportByPackage() {
+  const { ALL, FilterBar, PackageCard, filterPackages, useAllPackages } = matrixInternals;
   const allPackages = useAllPackages();
   const [filters, setFilters] = useState({
     product: ALL,
@@ -18,7 +13,7 @@ export function FeatureSupportByPackage() {
     mediation: ALL,
   });
 
-  const matched = useMemo(() => filterPackages(allPackages, filters), [allPackages, filters]);
+  const matched = useMemo(() => filterPackages(allPackages, filters), [allPackages, filters, filterPackages]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, typeof matched>();
